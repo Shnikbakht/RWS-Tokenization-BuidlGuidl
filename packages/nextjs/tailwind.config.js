@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./utils/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./utils/**/*.{js,ts,jsx,tsx}"
+  ],
   plugins: [require("daisyui")],
   darkTheme: "dark",
   darkMode: ["selector", "[data-theme='dark']"],
@@ -54,12 +58,44 @@ module.exports = {
           ".link:hover": { opacity: "80%" },
         },
       },
+      {
+        // New theme with black, white, and gold
+        "black-white-gold": {
+          primary: "#FFD700", // Gold
+          "primary-content": "#212638", // Dark accent for contrast
+          secondary: "#f4f8ff",
+          "secondary-content": "#212638",
+          accent: "#FFD700", // Gold for accent
+          "accent-content": "#212638", 
+          neutral: "#212638", // Dark background
+          "neutral-content": "#ffffff", // Light text
+          "base-100": "#212638", // Dark background for base
+          "base-200": "#2A3655", 
+          "base-300": "#212638", 
+          "base-content": "#F9FBFF", // White text color for content
+          info: "#FFD700", // Info as gold
+          success: "#34EEB6",
+          warning: "#FFCF72",
+          error: "#FF8863",
+          "--rounded-btn": "9999rem",
+          ".tooltip": { "--tooltip-tail": "6px" },
+          ".link": { textUnderlineOffset: "2px" },
+          ".link:hover": { opacity: "80%" },
+        },
+      },
     ],
   },
   theme: {
     extend: {
-      boxShadow: { center: "0 0 12px -2px rgb(0 0 0 / 0.05)" },
-      animation: { "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite" },
+      colors: {
+        gold: "#FFD700", // Add gold color globally
+      },
+      boxShadow: {
+        center: "0 0 12px -2px rgb(0 0 0 / 0.05)",
+      },
+      animation: {
+        "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
     },
   },
 };

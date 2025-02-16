@@ -25,7 +25,7 @@ const AdminDashboard = () => {
             <Link href="/admin/manage-token-sale">
               <button className="w-full text-left py-3 px-5 rounded-lg hover:bg-blue-800 text-lg">Manage Token Sale</button>
             </Link>
-            <Link href="/admin/transactions">
+            <Link href="/blockexplorer">
               <button className="w-full text-left py-3 px-5 rounded-lg hover:bg-blue-800 text-lg">Transactions</button>
             </Link>
           </div>
