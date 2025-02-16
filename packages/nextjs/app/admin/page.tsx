@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Address } from "~~/components/scaffold-eth";
 import { MintTokenForm } from "./_components/MintTokenForm"; // Assume you create a component for minting
 
+
 const AdminDashboard = () => {
   const { address: connectedAddress } = useAccount();
   const [mintingModalOpen, setMintingModalOpen] = useState(false);
