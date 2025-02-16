@@ -1,70 +1,97 @@
-"use client";
-
+"use client"; 
 import Link from "next/link";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Address } from "~~/components/scaffold-eth";
 
+// Home Page Data
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
 
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-10">
-        <div className="px-5">
-          <h1 className="text-center">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
+      {/* Hero Section */}
+      <div className="flex items-center flex-col flex-grow pt-10 bg-gradient-to-r from-blue-500 to-green-500">
+        <div className="px-5 text-white text-center">
+          <h1 className="text-4xl font-bold mb-4">
+            Unlock Real Estate Ownership with Blockchain
           </h1>
-          <div className="flex justify-center items-center space-x-2 flex-col sm:flex-row">
+          <p className="text-lg mb-6">
+            Fractionalize your real estate investment and own property shares securely through blockchain technology.
+          </p>
+
+          {/* Wallet Connect Info */}
+          <div className="flex justify-center items-center space-x-2 flex-col sm:flex-row mb-8">
             <p className="my-2 font-medium">Connected Address:</p>
             <Address address={connectedAddress} />
           </div>
-
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/app/page.tsx
-            </code>
-          </p>
-          <p className="text-center text-lg">
-            Edit your smart contract{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              YourContract.sol
-            </code>{" "}
-            in{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/hardhat/contracts
-            </code>
-          </p>
-        </div>
-
-        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <BugAntIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Tinker with your smart contract using the{" "}
-                <Link href="/debug" passHref className="link">
-                  Debug Contracts
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
+          
+          {/* CTA Buttons */}
+          <div className="flex space-x-4">
+            <Link href="/learn-more">
+              <button className="bg-yellow-500 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all">
+                Learn More
+              </button>
+            </Link>
+            <Link href="/get-started">
+              <button className="bg-white text-blue-800 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all">
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </div>
+
+      {/* What We Offer Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-blue-900 mb-4">What We Offer</h2>
+          <p className="text-lg text-gray-600">
+            Empowering individuals to invest in real estate with fractional ownership and tokenized shares.
+          </p>
+        </div>
+        <div className="flex justify-center gap-12 flex-wrap">
+          {/* Fractional Ownership Feature */}
+          <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-lg max-w-sm">
+            <img src="/icons/real-estate.svg" alt="Property" className="w-16 h-16 mb-4"/>
+            <h3 className="text-2xl font-semibold mb-2">Fractional Ownership</h3>
+            <p className="text-gray-600">
+              Own a fraction of high-value properties and diversify your investment portfolio.
+            </p>
+          </div>
+          {/* Blockchain Security Feature */}
+          <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-lg max-w-sm">
+            <img src="/icons/blockchain.svg" alt="Blockchain" className="w-16 h-16 mb-4"/>
+            <h3 className="text-2xl font-semibold mb-2">Blockchain Security</h3>
+            <p className="text-gray-600">
+              Transactions and ownership verified securely through blockchain technology, ensuring transparency.
+            </p>
+          </div>
+          {/* Tokenized Real Estate Feature */}
+          <div className="flex flex-col items-center bg-white p-8 rounded-xl shadow-lg max-w-sm">
+            <img src="/icons/token.svg" alt="Tokenization" className="w-16 h-16 mb-4"/>
+            <h3 className="text-2xl font-semibold mb-2">Tokenized Real Estate</h3>
+            <p className="text-gray-600">
+              Convert physical assets into tradable tokens, making real estate investment accessible to anyone.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Minting Dashboard CTA */}
+      <div className="bg-blue-900 text-white py-12 text-center">
+        <h2 className="text-3xl font-semibold mb-4">Launch Your Own Tokenized Property</h2>
+        <p className="text-lg mb-6">
+          Mint fractional ownership tokens for your property and open investment opportunities for others.
+        </p>
+        <Link href="/mint">
+          <button className="bg-yellow-500 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all">
+            Start Minting Tokens
+          </button>
+        </Link>
+      </div>
+
     </>
   );
 };
