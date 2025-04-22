@@ -59,6 +59,9 @@
     "node": ">=18.18.0"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "4.8.0",
+    "@openzeppelin/contracts-upgradeable": "4.8.0",
+    "@web3auth/mpc-core-kit": "^2.2.0",
     "wagmi": "^2.14.11"
   }
 }

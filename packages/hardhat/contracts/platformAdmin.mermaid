@@ -1,0 +1,31 @@
+sequenceDiagram
+    participant PlatformAdmin as PA
+    participant Manager as RealEstateSecurityManager
+    participant Token as ERC3643Token
+    participant VestingManager
+    participant DividendManager
+    participant SecondaryMarket
+
+    %% Platform Admin initializes the system (calls initialize)
+    PA->>Manager: initialize()
+    Manager->>DividendManager: updateDividendRate(annualDividendRate)
+    
+    %% Platform Admin updates dividend rate
+    PA->>Manager: updateDividendRate(newRate)
+    Manager->>DividendManager: updateDividendRate(newRate)
+    
+    %% Platform Admin funds the redemption reserve
+    PA->>Manager: fundRedemptionReserve(amount)
+    Manager->>VestingManager: addToRedemptionReserve(amount)
+    
+    %% Platform Admin updates the fee recipient for market fees
+    PA->>Manager: updateFeeRecipient(newRecipient)
+    
+    %% Platform Admin sets system contracts as agents on the token
+    PA->>Manager: setupAgents()
+    Manager->>Token: addAgent(vestingManager)
+    Manager->>Token: addAgent(Manager)
+
+    %% Platform Admin can also withdraw market fees
+    PA->>Manager: withdrawMarketFees()
+    Manager->>SecondaryMarket: withdrawFees(feeRecipient)

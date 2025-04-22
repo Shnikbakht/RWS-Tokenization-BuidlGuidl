@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant Investor
+    participant VestingManager
+    participant ERC3643Token
+    participant Stablecoin
+
+    %% 1. Investor checks redemption status
+    Investor->>VestingManager: getRedemptionStatus(investor)
+    VestingManager-->>Investor: returns status data
+
+    %% 2. Redeem tokens (if eligible)
+    Investor->>VestingManager: redeemTokens(amount)
+    VestingManager->>ERC3643Token: balanceOf(investor)
+    VestingManager->>ERC3643Token: transferFrom(investor, this)
+    VestingManager->>ERC3643Token: burn(this, amount)
+    VestingManager->>Stablecoin: transfer(investor, redemptionAmount)
+    VestingManager-->>Investor: emits TokensRedeemed

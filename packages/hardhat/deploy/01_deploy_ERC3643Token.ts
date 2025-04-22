@@ -23,7 +23,7 @@ const deployERC3643: DeployFunction = async function (hre: HardhatRuntimeEnviron
   
   console.log("✅ ClaimTopicsRegistry deployed at:", claimTopicsRegistry.address);
   
-  const claimTopicsRegistryContract = await hre.ethers.getContract<Contract>("ClaimTopicsRegistry", deployer);
+  const claimTopicsRegistryContract = await hre.ethers.getContractAt("ClaimTopicsRegistry", deployer);
   
   // Add KYC claim topic (example value: 42)
   const kycClaimTopic = 42;
@@ -64,7 +64,7 @@ const deployERC3643: DeployFunction = async function (hre: HardhatRuntimeEnviron
   
   console.log("✅ IdentityRegistry deployed at:", identityRegistry.address);
   
-  const identityRegistryStorageContract = await hre.ethers.getContract<Contract>("IdentityRegistryStorage", deployer);
+  const identityRegistryStorageContract = await hre.ethers.getContractAt("IdentityRegistryStorage", deployer);
   
   // Authorize the Identity Registry in the storage
   await identityRegistryStorageContract.authorizeRegistry(identityRegistry.address);

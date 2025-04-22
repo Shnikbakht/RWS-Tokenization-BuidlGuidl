@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant Issuer
+    participant Manager as RealEstateSecurityManager
+    participant Token as ERC3643Token
+    participant VestingManager
+    participant DividendManager
+
+    %% Issuer mints tokens and registers investment
+    Issuer->>Manager: mintTokens(investor, amount)
+    Manager->>Token: mint(investor, amount)
+    Manager->>VestingManager: registerInvestment(investor, amount)
+    
+    %% Issuer distributes dividends (optional)
+    Issuer->>Manager: distributeDividends(totalAmount)
+    Manager->>DividendManager: createDistribution(totalAmount)
+
+    %% Issuer can also call other functions as needed, for example:
+    %% Issuer->>Manager: otherFunction()
+    %% Manager->>Token: correspondingFunction()

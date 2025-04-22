@@ -1,0 +1,29 @@
+sequenceDiagram
+%%Dont like it. does n't look right!!!!!!!!!!!!!!!!**************************************shahnik
+    participant Investor as INV
+    participant Manager as RealEstateSecurityManager
+    participant Token as ERC3643Token
+    participant DividendManager
+    participant VestingManager
+    participant SecondaryMarket
+
+    %% Investor interacts with the token
+    INV->>Token: balanceOf(investorAddress)
+    Token->>INV: returns token balance
+
+    %% Investor purchases tokens (Minting process)
+    INV->>Manager: mintTokens(investorAddress, tokenAmount)
+    Manager->>Token: mint(investorAddress, tokenAmount)
+    Manager->>VestingManager: registerInvestment(investorAddress, tokenAmount)
+    
+    %% Investor can participate in dividend distribution
+    INV->>DividendManager: receiveDividends()
+    DividendManager->>INV: distributes dividend amount
+    
+    %% Investor interacts with the secondary market (if applicable)
+    INV->>SecondaryMarket: buyTokens(amount)
+    SecondaryMarket->>INV: confirm purchase
+
+    %% Investor can check redemption reserve
+    INV->>VestingManager: checkRedemptionReserve()
+    VestingManager->>INV: returns redemption reserve status

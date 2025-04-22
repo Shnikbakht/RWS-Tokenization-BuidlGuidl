@@ -222,8 +222,8 @@ contract IdentityRegistry is Ownable {
             for (uint256 j = 0; j < claimIds.length; j++) {
                 bytes32 claimId = claimIds[j];
                 
-                (uint256 topic, , address issuer, bytes memory signature, bytes memory data, ) = 
-                    IIdentity(identity).getClaim(claimId);
+                (uint256 topic, uint256 scheme, address issuer, bytes memory signature, bytes memory data, string memory uri) = IIdentity(identity).getClaim(claimId);
+
                 
                 // Check if issuer is trusted for this claim topic
                 if (topic == claimTopic && 

@@ -1,0 +1,37 @@
+sequenceDiagram
+    participant PlatformAdmin
+    participant Issuer
+    participant RealEstateSecurityManager as Manager
+    participant Investor
+
+    %% Platform Initialization
+    PlatformAdmin->>PlatformAdmin: Deploy IdentityRegistry
+    PlatformAdmin->>PlatformAdmin: Deploy IdentityRegistryStorage
+    PlatformAdmin->>PlatformAdmin: Deploy Compliance
+    PlatformAdmin->>PlatformAdmin: Deploy ClaimTopicsRegistry
+    PlatformAdmin->>PlatformAdmin: Deploy TrustedIssuersRegistry
+
+    PlatformAdmin->>PlatformAdmin: Deploy VestingManager
+    PlatformAdmin->>PlatformAdmin: Deploy SecondaryMarket
+    PlatformAdmin->>PlatformAdmin: Deploy RealEstateSecurityManager
+
+    %% Issuer Setup for New SPV/Property
+    Issuer->>Issuer: Deploy ERC3643Token
+    Issuer->>Issuer: Deploy DividendManager
+
+    %% Register & Integrate SPV Components
+    Issuer->>Manager: Register ERC3643Token
+    Issuer->>Manager: Register DividendManager
+
+    PlatformAdmin->>Manager: Link VestingManager
+    PlatformAdmin->>Manager: Link SecondaryMarket
+
+    %% Compliance Setup
+    PlatformAdmin->>IdentityRegistry: Set IdentityRegistryStorage
+    PlatformAdmin->>Compliance: Add ClaimTopicsRegistry
+    PlatformAdmin->>Compliance: Add TrustedIssuersRegistry
+    PlatformAdmin->>ERC3643Token: Set Compliance & IdentityRegistry
+
+    %% Investor onboarding (at runtime)
+    Investor->>IdentityRegistry: Submit identity claim
+    Investor->>ERC3643Token: Purchase or receive tokens

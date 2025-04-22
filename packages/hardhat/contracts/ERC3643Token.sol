@@ -51,7 +51,7 @@ contract ERC3643Token is ERC20, Pausable, Ownable, IERC3643 {
     // Identity Registry contract address
     address private _identityRegistry;
     
-    // Compliance contract address
+    // Compliance contract address 
     address private _compliance;
     
     // List of agents that can perform certain actions
