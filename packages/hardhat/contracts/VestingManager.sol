@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-
+import "hardhat/console.sol";
 interface IERC3643Token {
     function balanceOf(address account) external view returns (uint256);
     function transfer(address to, uint256 amount) external returns (bool);
@@ -151,20 +151,26 @@ contract VestingManager is Ownable, ReentrancyGuard {
         
         // Calculate redemption amount
         uint256 totalSupply = realEstateToken.totalSupply();
-        uint256 tokenValueInStablecoin = propertyValue.mul(_amount).div(totalSupply);
-        
+            
+        // propertyValue is likely in 18 decimals, tokens are in 18 decimals
+        uint256 tokenValueInEther = propertyValue.mul(_amount).div(totalSupply);
+
+        // Convert from 18 decimals to USDC's 6 decimals
+        uint256 tokenValueInStablecoin = tokenValueInEther.div(10**12); // Divide by 10^(18-6)
+
         // Apply early redemption penalty if applicable
         if (isEarlyRedemption) {
             uint256 penalty = tokenValueInStablecoin.mul(earlyRedemptionPenalty).div(BASIS_POINTS_DENOMINATOR);
             tokenValueInStablecoin = tokenValueInStablecoin.sub(penalty);
         }
-        
+        console.log("tokenValueInStablecoin:", tokenValueInStablecoin);
+        console.log("redemptionReserve:", redemptionReserve);
+
         // Check redemption reserve
         require(redemptionReserve >= tokenValueInStablecoin, "Insufficient redemption reserve");
         
         // Burn the tokens and update the redemption reserve
-        realEstateToken.transferFrom(msg.sender, address(this), _amount);
-        realEstateToken.burn(address(this), _amount);
+         realEstateToken.burn(msg.sender, _amount);
         
         // Transfer stablecoins to investor
         redemptionReserve = redemptionReserve.sub(tokenValueInStablecoin);

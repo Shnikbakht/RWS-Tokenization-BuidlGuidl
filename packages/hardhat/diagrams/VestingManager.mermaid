@@ -1,0 +1,31 @@
+classDiagram
+    class VestingManager {
+        +IERC3643Token realEstateToken
+        +IERC20 stablecoin
+        +uint256 propertyValue
+        +uint256 launchTimestamp
+        +uint256 earlyRedemptionPenalty
+        +uint256 redemptionReserve
+        +registerInvestment(address, uint256)
+        +updateEarlyRedemptionPenalty(uint256)
+        +addToRedemptionReserve(uint256)
+        +redeemTokens(uint256)
+        +getRedemptionStatus(address)
+    }
+
+    class IERC3643Token {
+        +balanceOf(address) uint256
+        +transfer(address, uint256) bool
+        +transferFrom(address, address, uint256) bool
+        +forcedTransfer(address, address, uint256) bool
+        +burn(address, uint256)
+        +totalSupply() uint256
+    }
+
+    class IERC20 {
+        +transferFrom(address, address, uint256) bool
+        +transfer(address, uint256) bool
+    }
+
+    VestingManager --> IERC3643Token : uses
+    VestingManager --> IERC20 : uses

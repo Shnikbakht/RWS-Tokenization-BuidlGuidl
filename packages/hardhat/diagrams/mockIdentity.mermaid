@@ -1,0 +1,69 @@
+sequenceDiagram
+    participant Owner
+    participant Other
+    participant MockIdentity
+    participant ClaimsMapping
+    participant ClaimsByTopicMapping
+    participant KeysMapping
+    
+    %% Contract Creation
+    Owner->>MockIdentity: deploy(owner_)
+    activate MockIdentity
+    MockIdentity->>MockIdentity: Set _owner = owner_
+    MockIdentity->>KeysMapping: _keys[keccak256(owner_)] = 1
+    deactivate MockIdentity
+    
+    %% Add Claim - Success Path
+    Owner->>MockIdentity: addClaim(topic, scheme, issuer, signature, data, uri)
+    activate MockIdentity
+    MockIdentity->>MockIdentity: Check msg.sender == _owner
+    Note over MockIdentity: Generate claimId = keccak256(issuer, topic)
+    MockIdentity->>ClaimsMapping: _claims[claimId] = new Claim(...)
+    MockIdentity->>ClaimsByTopicMapping: _claimsByTopic[topic].push(claimId)
+    MockIdentity-->>Owner: Return claimId + Emit ClaimAdded event
+    deactivate MockIdentity
+    
+    %% Add Claim - Failure Path
+    Other->>MockIdentity: addClaim(topic, scheme, issuer, signature, data, uri)
+    activate MockIdentity
+    MockIdentity->>MockIdentity: Check msg.sender == _owner
+    MockIdentity-->>Other: Revert "MockIdentity: Not the owner"
+    deactivate MockIdentity
+    
+    %% Add Key - Success Path
+    Owner->>MockIdentity: addKey(key, purpose)
+    activate MockIdentity
+    MockIdentity->>MockIdentity: Check msg.sender == _owner
+    MockIdentity->>KeysMapping: _keys[key] = purpose
+    deactivate MockIdentity
+    
+    %% Add Key - Failure Path
+    Other->>MockIdentity: addKey(key, purpose)
+    activate MockIdentity
+    MockIdentity->>MockIdentity: Check msg.sender == _owner
+    MockIdentity-->>Other: Revert "MockIdentity: Not the owner"
+    deactivate MockIdentity
+    
+    %% Get Claim Data
+    Owner->>MockIdentity: getClaim(claimId)
+    activate MockIdentity
+    MockIdentity->>ClaimsMapping: Retrieve _claims[claimId]
+    ClaimsMapping-->>MockIdentity: Return claim data
+    MockIdentity-->>Owner: Return (topic, scheme, issuer, signature, data, uri)
+    deactivate MockIdentity
+    
+    %% Get Claims By Topic
+    Owner->>MockIdentity: getClaimIdsByTopic(topic)
+    activate MockIdentity
+    MockIdentity->>ClaimsByTopicMapping: Retrieve _claimsByTopic[topic]
+    ClaimsByTopicMapping-->>MockIdentity: Return array of claimIds
+    MockIdentity-->>Owner: Return claimIds array
+    deactivate MockIdentity
+    
+    %% Key Has Purpose Check
+    Owner->>MockIdentity: keyHasPurpose(key, purpose)
+    activate MockIdentity
+    MockIdentity->>KeysMapping: Check _keys[key] == purpose
+    KeysMapping-->>MockIdentity: Return comparison result
+    MockIdentity-->>Owner: Return boolean result
+    deactivate MockIdentity

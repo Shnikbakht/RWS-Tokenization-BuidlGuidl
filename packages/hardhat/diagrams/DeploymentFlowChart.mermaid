@@ -1,0 +1,60 @@
+flowchart TD
+    subgraph "Platform Operator Deploys"
+        style PO fill:#d6eaf8,stroke:#2e86c1
+        PO[Platform Operator]
+        
+        subgraph "Core Infrastructure"
+            style CI fill:#e8f8f5,stroke:#16a085
+            IR[Identity Registry]
+            CTR[Claim Topics Registry]
+            TIR[Trusted Issuers Registry]
+        end
+        
+        subgraph "Market Infrastructure"
+            style MI fill:#eafaf1,stroke:#27ae60
+            SMF[Secondary Market Factory]
+            FC[Factory Contracts]
+        end
+        
+        PO --> IR
+        PO --> CTR
+        PO --> TIR
+        PO --> SMF
+        PO --> FC
+    end
+    
+    subgraph "Deployer/SPV Deploys"
+        style DE fill:#fff9c4,stroke:#f1c40f
+        DE[Deployer/SPV/Property Owner]
+        
+        subgraph "Property-Specific Contracts"
+            style PSC fill:#fef5e7,stroke:#e67e22
+            RESM[RealEstateSecurityManager]
+            T[ERC-3643 Token]
+            DM[Dividend Manager]
+            VM[Vesting Manager]
+            SM[Secondary Market]
+        end
+        
+        DE --> RESM
+        DE --> T
+        DE --> DM
+        DE --> VM
+        
+        RESM --> T
+        RESM --> DM
+        T --> VM
+        VM --> SM
+        FC --> SM
+    end
+    
+    subgraph "Issuer Role"
+        style ISS fill:#f9ebea,stroke:#e74c3c
+        ISS[KYC/Identity Issuer]
+        KYC[KYC Claims]
+    end
+    
+    ISS --> KYC
+    KYC --> IR
+    
+    TIR -.Registers.-> ISS

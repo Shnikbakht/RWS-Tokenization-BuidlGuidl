@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant Investor
+    participant VestingManager
+    participant RealEstateToken as IERC3643Token
+    participant Stablecoin as IERC20
+
+    Investor->>VestingManager: redeemTokens(_amount)
+    VestingManager->>VestingManager: check token balance, timestamp
+    VestingManager->>VestingManager: calculate time since investment
+    alt Too Early
+        VestingManager-->>Investor: revert "Vesting period not reached"
+    end
+    VestingManager->>RealEstateToken: totalSupply()
+    VestingManager->>VestingManager: calculate tokenValueInStablecoin
+    alt Early Redemption
+        VestingManager->>VestingManager: apply 10% penalty
+    end
+    VestingManager->>VestingManager: check redemptionReserve
+    VestingManager->>RealEstateToken: transferFrom(investor, contract, _amount)
+    VestingManager->>RealEstateToken: burn(contract, _amount)
+    VestingManager->>Stablecoin: transfer(investor, stablecoinAmount)
+    VestingManager-->>Investor: TokensRedeemed event

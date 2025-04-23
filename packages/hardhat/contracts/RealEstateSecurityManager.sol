@@ -15,7 +15,7 @@ interface IERC3643Token {
 }
 
 interface IDividendManager {
-    function createDistribution(uint256 _totalAmount) external;
+    function createDistribution(uint256 _totalAmount)    external;
     function updateDividendRate(uint256 _newRate) external;
 }
 

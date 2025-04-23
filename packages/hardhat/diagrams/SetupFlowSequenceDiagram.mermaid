@@ -13,16 +13,13 @@ sequenceDiagram
 
     PlatformAdmin->>PlatformAdmin: Deploy VestingManager
     PlatformAdmin->>PlatformAdmin: Deploy SecondaryMarket
-    PlatformAdmin->>PlatformAdmin: Deploy RealEstateSecurityManager
 
     %% Issuer Setup for New SPV/Property
     Issuer->>Issuer: Deploy ERC3643Token
     Issuer->>Issuer: Deploy DividendManager
 
-    %% Register & Integrate SPV Components
-    Issuer->>Manager: Register ERC3643Token
-    Issuer->>Manager: Register DividendManager
-
+    %% Deploy & Integrate SPV Components
+    PlatformAdmin->>Manager: Deploy RealEstateSecurityManager(ERC3643Token, DividendManager)
     PlatformAdmin->>Manager: Link VestingManager
     PlatformAdmin->>Manager: Link SecondaryMarket
 

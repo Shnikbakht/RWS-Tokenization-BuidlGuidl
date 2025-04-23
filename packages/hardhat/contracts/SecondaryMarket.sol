@@ -8,8 +8,10 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 interface IERC3643Token {
     function balanceOf(address account) external view returns (uint256);
+    function totalSupply() external view returns (uint256);
     function transfer(address to, uint256 amount) external returns (bool);
     function transferFrom(address from, address to, uint256 amount) external returns (bool);
+    function unfreezeTokens(address wallet, uint256 amount) external; // Add this line
 }
 
 interface IVestingManager {
@@ -94,48 +96,49 @@ contract SecondaryMarket is Ownable, ReentrancyGuard {
      * @param _pricePerToken Price per token in payment tokens
      */
     function createSellOrder(uint256 _tokenAmount, uint256 _pricePerToken) external nonReentrant {
-        require(_tokenAmount > 0, "Amount must be greater than 0");
-        require(_pricePerToken > 0, "Price must be greater than 0");
-        require(realEstateToken.balanceOf(msg.sender) >= _tokenAmount, "Insufficient token balance");
-        
-        // Check if the tokens are eligible for transfer (post early redemption period)
-        (bool canRedeemEarly, , , ) = vestingManager.getRedemptionStatus(msg.sender);
-        require(canRedeemEarly, "Tokens are still in lockup period");
-        
-        // Transfer tokens to this contract as escrow
-        require(realEstateToken.transferFrom(msg.sender, address(this), _tokenAmount), "Token transfer failed");
-        
-        // Create sell order
-        uint256 orderId = nextOrderId++;
-        sellOrders[orderId] = SellOrder({
-            seller: msg.sender,
-            tokenAmount: _tokenAmount,
-            pricePerToken: _pricePerToken,
-            timestamp: block.timestamp,
-            active: true
-        });
-        
-        emit SellOrderCreated(orderId, msg.sender, _tokenAmount, _pricePerToken);
-    }
+    require(_tokenAmount > 0, "Amount must be greater than 0");
+    require(_pricePerToken > 0, "Price must be greater than 0");
+    require(realEstateToken.balanceOf(msg.sender) >= _tokenAmount, "Insufficient token balance");
+
+    // Check if tokens are approved for transfer by SecondaryMarket
+uint256 allowance = IERC20(address(realEstateToken)).allowance(msg.sender, address(this));
+    require(allowance >= _tokenAmount, "Insufficient token allowance for sale");
+
+    // Optional: confirm vestingManager check for unlock
+    (bool canRedeemEarly, , , ) = vestingManager.getRedemptionStatus(msg.sender);
+    require(canRedeemEarly, "Tokens are still in lockup period");
+
+    // Save sell order info without actually transferring tokens
+    uint256 orderId = nextOrderId++;
+    sellOrders[orderId] = SellOrder({
+        seller: msg.sender,
+        tokenAmount: _tokenAmount,
+        pricePerToken: _pricePerToken,
+        timestamp: block.timestamp,
+        active: true
+    });
+
+    emit SellOrderCreated(orderId, msg.sender, _tokenAmount, _pricePerToken);
+}
+
     
     /**
      * @dev Cancels a sell order and returns tokens to seller
      * @param _orderId ID of the order to cancel
      */
     function cancelSellOrder(uint256 _orderId) external nonReentrant {
-        SellOrder storage order = sellOrders[_orderId];
-        
-        require(order.active, "Order not active");
-        require(order.seller == msg.sender, "Not the seller");
-        
-        // Mark order as inactive
-        order.active = false;
-        
-        // Return tokens to seller
-        require(realEstateToken.transfer(msg.sender, order.tokenAmount), "Token transfer failed");
-        
-        emit SellOrderCancelled(_orderId);
-    }
+    SellOrder storage order = sellOrders[_orderId];
+    
+    require(order.active, "Order not active");
+    require(msg.sender == order.seller, "Not the seller");
+    
+    // Simply mark the order as inactive - no token transfer needed
+    order.active = false;
+    
+    // No need to transfer tokens back, as they were never transferred to the contract
+    
+    emit SellOrderCancelled(_orderId);
+}
     
     /**
      * @dev Purchases tokens from a sell order
@@ -143,36 +146,36 @@ contract SecondaryMarket is Ownable, ReentrancyGuard {
      * @param _tokenAmount Amount of tokens to purchase
      */
     function purchaseTokens(uint256 _orderId, uint256 _tokenAmount) external nonReentrant {
-        SellOrder storage order = sellOrders[_orderId];
-        
-        require(order.active, "Order not active");
-        require(_tokenAmount > 0 && _tokenAmount <= order.tokenAmount, "Invalid token amount");
-        
-        // Calculate total price and platform fee
-        uint256 totalPrice = _tokenAmount.mul(order.pricePerToken);
-        uint256 platformFeeAmount = totalPrice.mul(platformFee).div(BASIS_POINTS_DENOMINATOR);
-        uint256 sellerAmount = totalPrice.sub(platformFeeAmount);
-        
-        // Transfer payment tokens from buyer
-        require(paymentToken.transferFrom(msg.sender, address(this), totalPrice), "Payment transfer failed");
-        
-        // Transfer tokens to buyer
-        require(realEstateToken.transfer(msg.sender, _tokenAmount), "Token transfer failed");
-        
-        // Transfer payment to seller minus fee
-        require(paymentToken.transfer(order.seller, sellerAmount), "Seller payment failed");
-        
-        // Update platform fees collected
-        totalFeesCollected = totalFeesCollected.add(platformFeeAmount);
-        
-        // Update order
-        order.tokenAmount = order.tokenAmount.sub(_tokenAmount);
-        if (order.tokenAmount == 0) {
-            order.active = false;
-        }
-        
-        emit TokensPurchased(_orderId, msg.sender, order.seller, _tokenAmount, totalPrice);
+    SellOrder storage order = sellOrders[_orderId];
+    
+    require(order.active, "Order not active");
+    require(_tokenAmount > 0 && _tokenAmount <= order.tokenAmount, "Invalid token amount");
+    
+    // Calculate total price and platform fee
+    uint256 totalPrice = _tokenAmount.mul(order.pricePerToken).div(1e18); // Add decimal adjustment
+    uint256 platformFeeAmount = totalPrice.mul(platformFee).div(BASIS_POINTS_DENOMINATOR);
+    uint256 sellerAmount = totalPrice.sub(platformFeeAmount);
+    
+    // Transfer payment tokens from buyer
+    require(paymentToken.transferFrom(msg.sender, address(this), totalPrice), "Payment transfer failed");
+    
+    // Transfer tokens directly from seller to buyer instead of from this contract
+    require(realEstateToken.transferFrom(order.seller, msg.sender, _tokenAmount), "Token transfer failed");
+    
+    // Transfer payment to seller minus fee
+    require(paymentToken.transfer(order.seller, sellerAmount), "Seller payment failed");
+    
+    // Update platform fees collected
+    totalFeesCollected = totalFeesCollected.add(platformFeeAmount);
+    
+    // Update order
+    order.tokenAmount = order.tokenAmount.sub(_tokenAmount);
+    if (order.tokenAmount == 0) {
+        order.active = false;
     }
+    
+    emit TokensPurchased(_orderId, msg.sender, order.seller, _tokenAmount, totalPrice);
+}
     
     /**
      * @dev Updates the platform fee

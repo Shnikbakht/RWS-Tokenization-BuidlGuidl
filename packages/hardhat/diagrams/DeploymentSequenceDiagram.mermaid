@@ -1,0 +1,35 @@
+sequenceDiagram
+    participant PO as Platform Operator
+    participant Issuer as KYC/Identity Issuer
+    participant Deployer as Deployer/SPV
+    participant Investor as Investor
+    
+    Note over PO: Initial Platform Setup
+    PO->>+PO: Deploy IdentityRegistry
+    PO->>+PO: Deploy ClaimTopicsRegistry
+    PO->>+PO: Deploy TrustedIssuersRegistry
+    PO->>+PO: Deploy Factory Contracts
+    
+    Note over PO,Issuer: Issuer Registration
+    PO->>+PO: Register Issuer in TrustedIssuersRegistry
+    
+    Note over Deployer: Property Tokenization
+    Deployer->>+Deployer: Deploy RealEstateSecurityManager
+    Deployer->>+Deployer: Deploy ERC-3643 Token
+    Deployer->>+Deployer: Deploy DividendManager
+    Deployer->>+Deployer: Deploy VestingManager
+    Deployer->>+Deployer: Fund Redemption Reserve
+    
+    Note over Deployer,PO: Integration
+    Deployer->>+PO: Register with Platform Registries
+    PO->>+Deployer: Set Platform as Fee Recipient
+    
+    Note over Investor,Issuer: Investor Onboarding
+    Investor->>+Investor: Create ONCHAINID
+    Investor->>+Issuer: Complete KYC
+    Issuer->>+Investor: Add KYC Claim (Topic 42)
+    
+    Note over Investor,Deployer: Investment Process
+    Investor->>+Deployer: Send USDC for Tokens
+    Deployer->>+Investor: Mint Tokens via RealEstateSecurityManager
+    Deployer->>+Deployer: Register in VestingManager
