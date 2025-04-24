@@ -1,0 +1,27 @@
+gantt
+    title Real Estate Token Vesting and Redemption Timeline
+    dateFormat YYYY-MM-DD
+    axisFormat %Y
+
+    section Vesting Periods
+    Initial Investment Period       :done, init, 2025-01-01, 2025-12-31
+    Full Lockup Period (Years 1-5)  :done, lockup, 2025-01-01, 2029-12-31
+    Early Redemption Period (Year 5-7)  :active, early, 2030-01-01, 2031-12-31
+    Full Redemption Period (After Year 7) :full, 2032-01-01, 2040-12-31
+
+    section Key Events
+    Token Issuance                  :milestone, m1, 2025-01-01, 0d
+    First Dividend Distribution     :milestone, m2, 2026-01-01, 0d
+    Early Redemption Attempt (Failed) :crit, attempt, 2027-01-01, 0d
+    Early Redemption With Penalty   :milestone, m3, 2030-01-01, 0d
+    Secondary Market Trading        :milestone, m4, 2030-06-01, 0d
+    Full Redemption Without Penalty :milestone, m5, 2032-01-01, 0d
+    
+    section Dividend Payments
+    Year 1 Dividend                 :dividend1, 2026-01-01, 30d
+    Year 2 Dividend                 :dividend2, 2027-01-01, 30d
+    Year 3 Dividend                 :dividend3, 2028-01-01, 30d
+    Year 4 Dividend                 :dividend4, 2029-01-01, 30d
+    Year 5 Dividend                 :dividend5, 2030-01-01, 30d
+    Year 6 Dividend                 :dividend6, 2031-01-01, 30d
+    Year 7 Dividend                 :dividend7, 2032-01-01, 30d

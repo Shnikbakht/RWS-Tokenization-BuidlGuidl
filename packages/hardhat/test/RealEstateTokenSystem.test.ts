@@ -228,7 +228,9 @@ describe("Real Estate Tokenization System", function () {
 
     // Transfer ownership of Compliance to RealEstateSecurityManager
     console.log("Transferring Compliance ownership to RealEstateSecurityManager...");
-    await compliance.transferOwnership(tokenAddress);
+    //await realEstateManager.addTrustedContract(tokenAddress);
+    await compliance.addTrustedContract(tokenAddress);
+
     console.log("✅ Compliance ownership transferred");
 
     console.log("🔨 initializing RealEstateSecurityManager...");
@@ -291,7 +293,6 @@ describe("Real Estate Tokenization System", function () {
 
     const owner = await realEstateManager.owner();
     console.log("Owner of RealEstateSecurityManager:", owner);
-    console.log("deployerrrrrrrr:", deployer);
     // Register VestingManager and RealEstateSecurityManager as agents
 
     const tokenOwner = await token.owner();
@@ -509,23 +510,10 @@ describe("Real Estate Tokenization System", function () {
       console.log("🧪 PHASE 4: COMPLIANCE RESTRICTIONS TEST");
       console.log("------------------------------------------------");
 
-      console.log("1️⃣ Testing country restrictions");
-
       console.log("🧪 PHASE 4: COMPLIANCE RESTRICTIONS TEST");
       console.log("------------------------------------------------");
 
       console.log("1️⃣ Testing country restrictions");
-
-      // Use Hardhat's setBalance function instead of trying to send ETH
-      const tokenAddress = await token.getAddress();
-      await ethers.provider.send("hardhat_setBalance", [tokenAddress, "0x" + ethers.parseEther("1.0").toString(16)]);
-
-      // Impersonate the token contract
-      const tokenSigner = await ethers.getImpersonatedSigner(tokenAddress);
-
-      // Transfer ownership of compliance back to the deployer
-      await compliance.connect(tokenSigner).transferOwnership(deployer.getAddress());
-      console.log("✅ Compliance ownership transferred back to deployer");
 
       // Block US country
       await compliance.blockCountry(COUNTRY_US);
