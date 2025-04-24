@@ -1,184 +1,151 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { hardhat } from "viem/chains";
-import { 
-  Bars3Icon, 
-  BugAntIcon, 
-  ShieldCheckIcon, 
-  HomeIcon,
-  ChartBarIcon,
-  BuildingOfficeIcon
-} from "@heroicons/react/24/outline";
-import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
-import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
+import { FaEthereum } from "react-icons/fa";
+import { SwitchTheme } from "./SwitchTheme";
 
-type HeaderMenuLink = {
+interface HeaderMenuLink {
   label: string;
   href: string;
   icon?: React.ReactNode;
-};
+}
 
-export const menuLinks: HeaderMenuLink[] = [
-  {
-    label: "Home",
-    href: "/",
-    icon: <HomeIcon className="h-4 w-4" />,
-  },
-  {
-    label: "Properties",
-    href: "/properties",
-    icon: <BuildingOfficeIcon className="h-4 w-4" />,
-  },
-  {
-    label: "Marketplace",
-    href: "/marketplace",
-    icon: <ChartBarIcon className="h-4 w-4" />,
-  },
-  {
-    label: "Debug Contracts",
-    href: "/debug",
-    icon: <BugAntIcon className="h-4 w-4" />,
-  },
-  {
-    label: "Admin Dashboard",
-    href: "/admin",
-    icon: <ShieldCheckIcon className="h-4 w-4" />,
-  },
-];
-
-export const HeaderMenuLinks = () => {
-  const pathname = usePathname();
-
-  return (
-    <>
-      {menuLinks.map(({ label, href, icon }) => {
-        const isActive = pathname === href;
-        return (
-          <li key={href}>
-            <Link
-              href={href}
-              passHref
-              className={`${
-                isActive 
-                  ? "bg-indigo-100 text-indigo-800 font-medium shadow-sm" 
-                  : "text-gray-700 hover:text-indigo-600"
-              } hover:bg-indigo-50 transition-all duration-200 py-2 px-4 text-sm rounded-lg flex items-center gap-2`}
-            >
-              <span className={`${isActive ? "text-indigo-600" : "text-gray-500"}`}>{icon}</span>
-              <span>{label}</span>
-            </Link>
-          </li>
-        );
-      })}
-    </>
-  );
-};
-
-/**
- * Site header
- */
 export const Header = () => {
-  const { targetNetwork } = useTargetNetwork();
-  const isLocalNetwork = targetNetwork.id === hardhat.id;
-  const pathname = usePathname();
-  
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const burgerMenuRef = useRef<HTMLDivElement>(null);
-  
-  useOutsideClick(
-    burgerMenuRef,
-    useCallback(() => setIsDrawerOpen(false), []),
-  );
-  
-  // Handle scroll for transparent/solid header transition
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Handle scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Determine if we're on the home page
-  const isHomePage = pathname === "/";
-  
-  // Set header style based on page and scroll position
-  const headerStyle = isHomePage && !isScrolled
-    ? "bg-transparent text-white" 
-    : "bg-white shadow-md text-gray-800";
+  const menuLinks: HeaderMenuLink[] = [
+    { label: "Home", href: "/" },
+    { label: "Marketplace", href: "/marketplace" },
+    { label: "Dashboard", href: "/dashboard" },
+    { label: "About", href: "/about" },
+  ];
 
   return (
-    <header 
-      className={`sticky top-0 z-40 transition-all duration-300 ${headerStyle}`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo & Brand */}
-          <div className="flex items-center">
-            <Link href="/" passHref className="flex items-center gap-3 shrink-0">
-              <div className="relative w-9 h-9">
-                <Image 
-                  alt="TokenTrust logo" 
-                  className="cursor-pointer" 
-                  fill 
-                  src="/logo.svg" 
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg leading-tight">TokenTrust</span>
-                <span className="text-xs opacity-80">Trust. Tokenized. Real Assets.</span>
-              </div>
-            </Link>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:ml-10 lg:flex lg:space-x-2">
-              <HeaderMenuLinks />
-            </nav>
-          </div>
-          
-          {/* Connect Wallet & Faucet Buttons */}
-          <div className="flex items-center gap-2">
-            <RainbowKitCustomConnectButton />
-            {isLocalNetwork && <FaucetButton />}
-            
-            {/* Mobile menu button */}
-            <div className="lg:hidden" ref={burgerMenuRef}>
-              <button
-                type="button"
-                className={`inline-flex items-center justify-center p-2 rounded-md ${
-                  isHomePage && !isScrolled 
-                    ? "text-white hover:bg-indigo-800 hover:bg-opacity-20" 
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-                onClick={() => setIsDrawerOpen(prev => !prev)}
-              >
-                <span className="sr-only">Open main menu</span>
-                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-              </button>
-              
-              {/* Mobile menu dropdown */}
-              {isDrawerOpen && (
-                <div className="absolute top-full right-0 w-56 mt-2 origin-top-right bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-2">
-                    <ul
-                      className="space-y-1 p-2"
-                      onClick={() => setIsDrawerOpen(false)}
-                    >
-                      <HeaderMenuLinks />
-                    </ul>
-                  </div>
-                </div>
-              )}
+    <div className={`sticky top-0 z-50 w-full transition-all duration-200 ${isScrolled ? "bg-base-100/90 backdrop-blur-md shadow-md" : "bg-transparent"}`}>
+      <div className="navbar container mx-auto px-4 min-h-16">
+        {/* Mobile menu button */}
+        <div className="flex-none lg:hidden">
+          <label
+            htmlFor="drawer-toggle"
+            className="btn btn-square btn-ghost"
+            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              className="inline-block w-6 h-6 stroke-current"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </label>
+        </div>
+
+        {/* Logo & Brand */}
+        <div className="flex-1">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="relative w-8 h-8 flex items-center justify-center rounded-full bg-estate-400">
+              <FaEthereum className="text-white text-xl" />
             </div>
-          </div>
+            <div className="font-display font-bold text-xl tracking-tight">
+              <span className="text-estate-300">Token</span>
+              <span className="text-token-red">Estate</span>
+            </div>
+          </Link>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="flex-none hidden lg:block">
+          <ul className="menu menu-horizontal gap-2">
+            {menuLinks.map(({ label, href }) => (
+              <li key={href}>
+                <Link 
+                  href={href} 
+                  className={`rounded-lg hover:bg-estate-500 px-4 transition-all ${
+                    pathname === href ? "font-semibold text-estate-200" : "text-estate-100"
+                  }`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link
+                href="/connect"
+                className="btn btn-primary btn-sm rounded-lg ml-2"
+              >
+                Connect Wallet
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Theme Toggle */}
+        <div className="flex-none gap-2">
+          <SwitchTheme />
         </div>
       </div>
-    </header>
+
+      {/* Mobile Drawer */}
+      <div className={`fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-200 ${
+        isDrawerOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`} onClick={() => setIsDrawerOpen(false)} />
+
+      <div className={`fixed top-0 left-0 h-full w-64 bg-base-200 shadow-lg z-50 transform transition-transform duration-200 lg:hidden ${
+        isDrawerOpen ? "translate-x-0" : "-translate-x-full"
+      }`}>
+        <div className="p-4 border-b border-base-300">
+          <Link href="/" className="flex items-center gap-2" onClick={() => setIsDrawerOpen(false)}>
+            <div className="relative w-8 h-8 flex items-center justify-center rounded-full bg-estate-400">
+              <FaEthereum className="text-white text-xl" />
+            </div>
+            <div className="font-display font-bold text-xl">
+              <span className="text-estate-300">Token</span>
+              <span className="text-token-red">Estate</span>
+            </div>
+          </Link>
+        </div>
+        <ul className="menu p-4">
+          {menuLinks.map(({ label, href }) => (
+            <li key={href}>
+              <Link 
+                href={href} 
+                className={`${pathname === href ? "font-semibold bg-estate-500/20" : ""}`}
+                onClick={() => setIsDrawerOpen(false)}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+          <li className="mt-4">
+            <Link
+              href="/connect"
+              className="btn btn-primary btn-sm justify-center"
+              onClick={() => setIsDrawerOpen(false)}
+            >
+              Connect Wallet
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 };
