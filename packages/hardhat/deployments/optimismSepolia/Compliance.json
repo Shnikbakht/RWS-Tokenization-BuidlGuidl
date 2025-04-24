@@ -1,0 +1,637 @@
+{
+  "address": "0xC63350E26FDdB9C2ecaAAa5F2CD737d572589560",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "identityRegistry",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint16",
+          "name": "country",
+          "type": "uint16"
+        }
+      ],
+      "name": "CountryBlocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint16",
+          "name": "country",
+          "type": "uint16"
+        }
+      ],
+      "name": "CountryUnblocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "identityRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityRegistrySet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxTokenHolders",
+          "type": "uint256"
+        }
+      ],
+      "name": "MaxTokenHoldersSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "tokenHolder",
+          "type": "address"
+        }
+      ],
+      "name": "TokenHolderAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "tokenHolder",
+          "type": "address"
+        }
+      ],
+      "name": "TokenHolderRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "TrustedContractAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "TrustedContractRemoved",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addTokenHolder",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addTrustedContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "country",
+          "type": "uint16"
+        }
+      ],
+      "name": "blockCountry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "canTransfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getIdentityRegistry",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getMaxTokenHolders",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "country",
+          "type": "uint16"
+        }
+      ],
+      "name": "isCountryBlocked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "removeTokenHolder",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "removeTrustedContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "identityRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setIdentityRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "maxTokenHolders",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxTokenHolders",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "tokenHolderCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "country",
+          "type": "uint16"
+        }
+      ],
+      "name": "unblockCountry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x2f9496b1ec7c672b13d9d41992a7bba355973257ed055c1a374e44e0c61b1d37",
+  "receipt": {
+    "to": null,
+    "from": "0x6eC7e3C0831e7F48A85DFf4Ef5FB1cEBA0368128",
+    "contractAddress": "0xC63350E26FDdB9C2ecaAAa5F2CD737d572589560",
+    "transactionIndex": 10,
+    "gasUsed": "948937",
+    "logsBloom": "0x00000000000010000000000000000008000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000001000000000000001000100000000000000008020000000000000000000800000000000000000000000000000000400000000000800000000100000000000000000000000000000000000000000000040000000000000000200000000000000080000000000000000000000000000000000000000020000000000000000000000000000000000000000000200020000000000000001000000000000000000000000000000000000000000000008000",
+    "blockHash": "0x478dd5a0c06415ff30866a6a32c33afda2c7dc68039dbedf5769bf40c5f9cb5b",
+    "transactionHash": "0x2f9496b1ec7c672b13d9d41992a7bba355973257ed055c1a374e44e0c61b1d37",
+    "logs": [
+      {
+        "transactionIndex": 10,
+        "blockNumber": 26833213,
+        "transactionHash": "0x2f9496b1ec7c672b13d9d41992a7bba355973257ed055c1a374e44e0c61b1d37",
+        "address": "0xC63350E26FDdB9C2ecaAAa5F2CD737d572589560",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000006ec7e3c0831e7f48a85dff4ef5fb1ceba0368128"
+        ],
+        "data": "0x",
+        "logIndex": 18,
+        "blockHash": "0x478dd5a0c06415ff30866a6a32c33afda2c7dc68039dbedf5769bf40c5f9cb5b"
+      },
+      {
+        "transactionIndex": 10,
+        "blockNumber": 26833213,
+        "transactionHash": "0x2f9496b1ec7c672b13d9d41992a7bba355973257ed055c1a374e44e0c61b1d37",
+        "address": "0xC63350E26FDdB9C2ecaAAa5F2CD737d572589560",
+        "topics": [
+          "0x8aa6172b9dcbe4f05892121059bc535d4743d706ba3ac6cbabf4a40de229e388",
+          "0x000000000000000000000000607bd35bccaf2421ee9fbbbffe793c6dd06b0d5a"
+        ],
+        "data": "0x",
+        "logIndex": 19,
+        "blockHash": "0x478dd5a0c06415ff30866a6a32c33afda2c7dc68039dbedf5769bf40c5f9cb5b"
+      },
+      {
+        "transactionIndex": 10,
+        "blockNumber": 26833213,
+        "transactionHash": "0x2f9496b1ec7c672b13d9d41992a7bba355973257ed055c1a374e44e0c61b1d37",
+        "address": "0xC63350E26FDdB9C2ecaAAa5F2CD737d572589560",
+        "topics": [
+          "0x4ab5470c324f1d6a6c7f333f53cda6d482a8ff05065ba9f6254f35da2cbb115a"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000000003e8",
+        "logIndex": 20,
+        "blockHash": "0x478dd5a0c06415ff30866a6a32c33afda2c7dc68039dbedf5769bf40c5f9cb5b"
+      }
+    ],
+    "blockNumber": 26833213,
+    "cumulativeGasUsed": "12041058",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x607bD35bccaF2421eE9fBbbFFe793C6dD06B0d5A"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "db646b56958dd39c955b59fe23fdd2e0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"identityRegistry\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint16\",\"name\":\"country\",\"type\":\"uint16\"}],\"name\":\"CountryBlocked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint16\",\"name\":\"country\",\"type\":\"uint16\"}],\"name\":\"CountryUnblocked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"identityRegistry\",\"type\":\"address\"}],\"name\":\"IdentityRegistrySet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxTokenHolders\",\"type\":\"uint256\"}],\"name\":\"MaxTokenHoldersSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"tokenHolder\",\"type\":\"address\"}],\"name\":\"TokenHolderAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"tokenHolder\",\"type\":\"address\"}],\"name\":\"TokenHolderRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"name\":\"TrustedContractAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"name\":\"TrustedContractRemoved\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addTokenHolder\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"name\":\"addTrustedContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"country\",\"type\":\"uint16\"}],\"name\":\"blockCountry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"canTransfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getIdentityRegistry\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getMaxTokenHolders\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"country\",\"type\":\"uint16\"}],\"name\":\"isCountryBlocked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"removeTokenHolder\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"name\":\"removeTrustedContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"identityRegistry\",\"type\":\"address\"}],\"name\":\"setIdentityRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"maxTokenHolders\",\"type\":\"uint256\"}],\"name\":\"setMaxTokenHolders\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenHolderCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"country\",\"type\":\"uint16\"}],\"name\":\"unblockCountry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Manages compliance rules for ERC-3643 token transfers\",\"kind\":\"dev\",\"methods\":{\"addTokenHolder(address)\":{\"details\":\"Updates token holder count when tokens are added to an account\",\"params\":{\"account\":\"Address of the account\"}},\"addTrustedContract(address)\":{\"details\":\"Adds a trusted contract that can call restricted functions\",\"params\":{\"contractAddress\":\"Address of the trusted contract\"}},\"blockCountry(uint16)\":{\"details\":\"Blocks a country\",\"params\":{\"country\":\"Country code to block\"}},\"canTransfer(address,address,uint256)\":{\"details\":\"Checks if a transfer is compliant\",\"params\":{\"amount\":\"Amount of tokens to transfer\",\"from\":\"Address of the sender\",\"to\":\"Address of the receiver\"},\"returns\":{\"_0\":\"True if the transfer is compliant\"}},\"constructor\":{\"details\":\"Constructor\",\"params\":{\"identityRegistry\":\"Address of the identity registry\"}},\"getIdentityRegistry()\":{\"details\":\"Gets the identity registry\",\"returns\":{\"_0\":\"Address of the identity registry\"}},\"getMaxTokenHolders()\":{\"details\":\"Gets the maximum number of token holders\",\"returns\":{\"_0\":\"Maximum number of token holders\"}},\"isCountryBlocked(uint16)\":{\"details\":\"Checks if a country is blocked\",\"params\":{\"country\":\"Country code to check\"},\"returns\":{\"_0\":\"True if the country is blocked\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"removeTokenHolder(address)\":{\"details\":\"Updates token holder count when tokens are removed from an account\",\"params\":{\"account\":\"Address of the account\"}},\"removeTrustedContract(address)\":{\"details\":\"Removes a trusted contract\",\"params\":{\"contractAddress\":\"Address of the trusted contract\"}},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"setIdentityRegistry(address)\":{\"details\":\"Sets the identity registry\",\"params\":{\"identityRegistry\":\"Address of the identity registry\"}},\"setMaxTokenHolders(uint256)\":{\"details\":\"Sets the maximum number of token holders\",\"params\":{\"maxTokenHolders\":\"Maximum number of token holders\"}},\"tokenHolderCount()\":{\"details\":\"Gets the current number of token holders\",\"returns\":{\"_0\":\"Current number of token holders\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"unblockCountry(uint16)\":{\"details\":\"Unblocks a country\",\"params\":{\"country\":\"Country code to unblock\"}}},\"title\":\"Compliance\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Compliance.sol\":\"Compliance\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/Compliance.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.17;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\nimport \\\"./ComplianceStorage.sol\\\";\\n\\n/**\\n * @title IIdentityRegistry\\n * @dev Interface for the IdentityRegistry contract\\n */\\ninterface IIdentityRegistry {\\n    function isVerified(address _investor) external view returns (bool);\\n    function identity(address _investor) external view returns (address);\\n    function investorCountry(address _investor) external view returns (uint16);\\n}\\n\\n/**\\n * @title Compliance\\n * @dev Manages compliance rules for ERC-3643 token transfers\\n */\\ncontract Compliance is ComplianceStorage, Ownable {\\n    // Mapping of trusted contracts\\n    mapping(address => bool) private _trustedContracts;\\n\\n    // Events\\n    event IdentityRegistrySet(address indexed identityRegistry);\\n    event CountryBlocked(uint16 indexed country);\\n    event CountryUnblocked(uint16 indexed country);\\n    event MaxTokenHoldersSet(uint256 maxTokenHolders);\\n    event TokenHolderAdded(address indexed tokenHolder);\\n    event TokenHolderRemoved(address indexed tokenHolder);\\n    event TrustedContractAdded(address indexed contractAddress);\\n    event TrustedContractRemoved(address indexed contractAddress);\\n\\n    /**\\n     * @dev Constructor\\n     * @param identityRegistry Address of the identity registry\\n     */\\n    constructor(address identityRegistry) {\\n        require(identityRegistry != address(0), \\\"Compliance: Invalid address\\\");\\n        _identityRegistry = identityRegistry;\\n        emit IdentityRegistrySet(identityRegistry);\\n        \\n        // Default max token holders\\n        _maxTokenHolders = 1000;\\n        emit MaxTokenHoldersSet(_maxTokenHolders);\\n    }\\n\\n    /**\\n     * @dev Sets the identity registry\\n     * @param identityRegistry Address of the identity registry\\n     */\\n    function setIdentityRegistry(address identityRegistry) external onlyOwner {\\n        require(identityRegistry != address(0), \\\"Compliance: Invalid address\\\");\\n        _identityRegistry = identityRegistry;\\n        emit IdentityRegistrySet(identityRegistry);\\n    }\\n\\n    /**\\n     * @dev Adds a trusted contract that can call restricted functions\\n     * @param contractAddress Address of the trusted contract\\n     */\\n    function addTrustedContract(address contractAddress) external onlyOwner {\\n        require(contractAddress != address(0), \\\"Compliance: Invalid address\\\");\\n        require(!_trustedContracts[contractAddress], \\\"Compliance: Contract is already trusted\\\");\\n        _trustedContracts[contractAddress] = true;\\n        emit TrustedContractAdded(contractAddress);\\n    }\\n\\n    /**\\n     * @dev Removes a trusted contract\\n     * @param contractAddress Address of the trusted contract\\n     */\\n    function removeTrustedContract(address contractAddress) external onlyOwner {\\n        require(_trustedContracts[contractAddress], \\\"Compliance: Contract is not trusted\\\");\\n        _trustedContracts[contractAddress] = false;\\n        emit TrustedContractRemoved(contractAddress);\\n    }\\n\\n    /**\\n     * @dev Modifier to restrict access to trusted contracts\\n     */\\n    modifier onlyTrustedContract() {\\n        require(_trustedContracts[msg.sender], \\\"Compliance: Caller is not a trusted contract\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Blocks a country\\n     * @param country Country code to block\\n     */\\n    function blockCountry(uint16 country) external onlyOwner {\\n        require(!_blockedCountries[country], \\\"Compliance: Country already blocked\\\");\\n        _blockedCountries[country] = true;\\n        emit CountryBlocked(country);\\n    }\\n\\n    /**\\n     * @dev Unblocks a country\\n     * @param country Country code to unblock\\n     */\\n    function unblockCountry(uint16 country) external onlyOwner {\\n        require(_blockedCountries[country], \\\"Compliance: Country not blocked\\\");\\n        _blockedCountries[country] = false;\\n        emit CountryUnblocked(country);\\n    }\\n\\n    /**\\n     * @dev Sets the maximum number of token holders\\n     * @param maxTokenHolders Maximum number of token holders\\n     */\\n    function setMaxTokenHolders(uint256 maxTokenHolders) external onlyOwner {\\n        require(maxTokenHolders > 0, \\\"Compliance: Invalid max token holders\\\");\\n        _maxTokenHolders = maxTokenHolders;\\n        emit MaxTokenHoldersSet(maxTokenHolders);\\n    }\\n\\n    /**\\n     * @dev Updates token holder count when tokens are added to an account\\n     * @param account Address of the account\\n     */\\n    function addTokenHolder(address account) external onlyTrustedContract {\\n        if (!_hasTokens[account]) {\\n            _hasTokens[account] = true;\\n            _tokenHolderCount++;\\n            emit TokenHolderAdded(account);\\n        }\\n    }\\n\\n    /**\\n     * @dev Updates token holder count when tokens are removed from an account\\n     * @param account Address of the account\\n     */\\n    function removeTokenHolder(address account) external onlyTrustedContract {\\n        if (_hasTokens[account]) {\\n            _hasTokens[account] = false;\\n            _tokenHolderCount--;\\n            emit TokenHolderRemoved(account);\\n        }\\n    }\\n\\n    /**\\n     * @dev Checks if a transfer is compliant\\n     * @param from Address of the sender\\n     * @param to Address of the receiver\\n     * @param amount Amount of tokens to transfer\\n     * @return True if the transfer is compliant\\n     */\\n    function canTransfer(address from, address to, uint256 amount) external view returns (bool) {\\n        // If it's a mint (from is zero address), check only the receiver\\n        if (from == address(0)) {\\n            return _checkReceiver(to);\\n        }\\n        \\n        // If it's a burn (to is zero address), return true\\n        if (to == address(0)) {\\n            return true;\\n        }\\n        \\n        // Check if both sender and receiver are verified\\n        if (!IIdentityRegistry(_identityRegistry).isVerified(from) || \\n            !IIdentityRegistry(_identityRegistry).isVerified(to)) {\\n            return false;\\n        }\\n        \\n        // Check if receiver's country is blocked\\n        uint16 receiverCountry = IIdentityRegistry(_identityRegistry).investorCountry(to);\\n        if (_blockedCountries[receiverCountry]) {\\n            return false;\\n        }\\n        \\n        // Check if max token holders would be exceeded\\n        if (!_hasTokens[to] && _tokenHolderCount >= _maxTokenHolders) {\\n            return false;\\n        }\\n        \\n        return true;\\n    }\\n\\n    /**\\n     * @dev Checks if a receiver is compliant\\n     * @param to Address of the receiver\\n     * @return True if the receiver is compliant\\n     */\\n    function _checkReceiver(address to) internal view returns (bool) {\\n        // Check if receiver is verified\\n        if (!IIdentityRegistry(_identityRegistry).isVerified(to)) {\\n            return false;\\n        }\\n        \\n        // Check if receiver's country is blocked\\n        uint16 receiverCountry = IIdentityRegistry(_identityRegistry).investorCountry(to);\\n        if (_blockedCountries[receiverCountry]) {\\n            return false;\\n        }\\n        \\n        // Check if max token holders would be exceeded\\n        if (!_hasTokens[to] && _tokenHolderCount >= _maxTokenHolders) {\\n            return false;\\n        }\\n        \\n        return true;\\n    }\\n\\n    /**\\n     * @dev Gets the identity registry\\n     * @return Address of the identity registry\\n     */\\n    function getIdentityRegistry() external view returns (address) {\\n        return _identityRegistry;\\n    }\\n\\n    /**\\n     * @dev Checks if a country is blocked\\n     * @param country Country code to check\\n     * @return True if the country is blocked\\n     */\\n    function isCountryBlocked(uint16 country) external view returns (bool) {\\n        return _blockedCountries[country];\\n    }\\n\\n    /**\\n     * @dev Gets the maximum number of token holders\\n     * @return Maximum number of token holders\\n     */\\n    function getMaxTokenHolders() external view returns (uint256) {\\n        return _maxTokenHolders;\\n    }\\n\\n    /**\\n     * @dev Gets the current number of token holders\\n     * @return Current number of token holders\\n     */\\n    function tokenHolderCount() external view returns (uint256) {\\n        return _tokenHolderCount;\\n    }\\n}\\n\\n\\n// pragma solidity ^0.8.17;\\n\\n// import \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n// import \\\"./ComplianceStorage.sol\\\";\\n\\n// /**\\n//  * @title IIdentityRegistry\\n//  * @dev Interface for the IdentityRegistry contract\\n//  */\\n// interface IIdentityRegistry {\\n//     function isVerified(address _investor) external view returns (bool);\\n//     function identity(address _investor) external view returns (address);\\n//     function investorCountry(address _investor) external view returns (uint16);\\n// }\\n\\n// /**\\n//  * @title Compliance\\n//  * @dev Manages compliance rules for ERC-3643 token transfers\\n//  */\\n// contract Compliance is ComplianceStorage, Ownable {\\n//     // Events\\n//     event IdentityRegistrySet(address indexed identityRegistry);\\n//     event CountryBlocked(uint16 indexed country);\\n//     event CountryUnblocked(uint16 indexed country);\\n//     event MaxTokenHoldersSet(uint256 maxTokenHolders);\\n//     event TokenHolderAdded(address indexed tokenHolder);\\n//     event TokenHolderRemoved(address indexed tokenHolder);\\n\\n//     /**\\n//      * @dev Constructor\\n//      * @param identityRegistry Address of the identity registry\\n//      */\\n//     constructor(address identityRegistry) {\\n//         require(identityRegistry != address(0), \\\"Compliance: Invalid address\\\");\\n//         _identityRegistry = identityRegistry;\\n//         emit IdentityRegistrySet(identityRegistry);\\n        \\n//         // Default max token holders\\n//         _maxTokenHolders = 1000;\\n//         emit MaxTokenHoldersSet(_maxTokenHolders);\\n//     }\\n\\n//     /**\\n//      * @dev Sets the identity registry\\n//      * @param identityRegistry Address of the identity registry\\n//      */\\n//     function setIdentityRegistry(address identityRegistry) external onlyOwner {\\n//         require(identityRegistry != address(0), \\\"Compliance: Invalid address\\\");\\n//         _identityRegistry = identityRegistry;\\n//         emit IdentityRegistrySet(identityRegistry);\\n//     }\\n\\n//     /**\\n//      * @dev Blocks a country\\n//      * @param country Country code to block\\n//      */\\n//     function blockCountry(uint16 country) external onlyOwner {\\n//         require(!_blockedCountries[country], \\\"Compliance: Country already blocked\\\");\\n//         _blockedCountries[country] = true;\\n//         emit CountryBlocked(country);\\n//     }\\n\\n//     /**\\n//      * @dev Unblocks a country\\n//      * @param country Country code to unblock\\n//      */\\n//     function unblockCountry(uint16 country) external onlyOwner {\\n//         require(_blockedCountries[country], \\\"Compliance: Country not blocked\\\");\\n//         _blockedCountries[country] = false;\\n//         emit CountryUnblocked(country);\\n//     }\\n\\n//     /**\\n//      * @dev Sets the maximum number of token holders\\n//      * @param maxTokenHolders Maximum number of token holders\\n//      */\\n//     function setMaxTokenHolders(uint256 maxTokenHolders) external onlyOwner {\\n//         require(maxTokenHolders > 0, \\\"Compliance: Invalid max token holders\\\");\\n//         _maxTokenHolders = maxTokenHolders;\\n//         emit MaxTokenHoldersSet(maxTokenHolders);\\n//     }\\n\\n//     /**\\n//      * @dev Updates token holder count when tokens are added to an account\\n//      * @param account Address of the account\\n//      */\\n//     function addTokenHolder(address account) external onlyOwner {\\n//         if (!_hasTokens[account]) {\\n//             _hasTokens[account] = true;\\n//             _tokenHolderCount++;\\n//             emit TokenHolderAdded(account);\\n//         }\\n//     }\\n\\n//     /**\\n//      * @dev Updates token holder count when tokens are removed from an account\\n//      * @param account Address of the account\\n//      */\\n//     function removeTokenHolder(address account) external onlyOwner {\\n//         if (_hasTokens[account]) {\\n//             _hasTokens[account] = false;\\n//             _tokenHolderCount--;\\n//             emit TokenHolderRemoved(account);\\n//         }\\n//     }\\n\\n//     /**\\n//      * @dev Checks if a transfer is compliant\\n//      * @param from Address of the sender\\n//      * @param to Address of the receiver\\n//      * @param amount Amount of tokens to transfer\\n//      * @return True if the transfer is compliant\\n//      */\\n//     function canTransfer(address from, address to, uint256 amount) external view returns (bool) {\\n//         // If it's a mint (from is zero address), check only the receiver\\n//         if (from == address(0)) {\\n//             return _checkReceiver(to);\\n//         }\\n        \\n//         // If it's a burn (to is zero address), return true\\n//         if (to == address(0)) {\\n//             return true;\\n//         }\\n        \\n//         // Check if both sender and receiver are verified\\n//         if (!IIdentityRegistry(_identityRegistry).isVerified(from) || \\n//             !IIdentityRegistry(_identityRegistry).isVerified(to)) {\\n//             return false;\\n//         }\\n        \\n//         // Check if receiver's country is blocked\\n//         uint16 receiverCountry = IIdentityRegistry(_identityRegistry).investorCountry(to);\\n//         if (_blockedCountries[receiverCountry]) {\\n//             return false;\\n//         }\\n        \\n//         // Check if max token holders would be exceeded\\n//         if (!_hasTokens[to] && _tokenHolderCount >= _maxTokenHolders) {\\n//             return false;\\n//         }\\n        \\n//         return true;\\n//     }\\n\\n//     /**\\n//      * @dev Checks if a receiver is compliant\\n//      * @param to Address of the receiver\\n//      * @return True if the receiver is compliant\\n//      */\\n//     function _checkReceiver(address to) internal view returns (bool) {\\n//         // Check if receiver is verified\\n//         if (!IIdentityRegistry(_identityRegistry).isVerified(to)) {\\n//             return false;\\n//         }\\n        \\n//         // Check if receiver's country is blocked\\n//         uint16 receiverCountry = IIdentityRegistry(_identityRegistry).investorCountry(to);\\n//         if (_blockedCountries[receiverCountry]) {\\n//             return false;\\n//         }\\n        \\n//         // Check if max token holders would be exceeded\\n//         if (!_hasTokens[to] && _tokenHolderCount >= _maxTokenHolders) {\\n//             return false;\\n//         }\\n        \\n//         return true;\\n//     }\\n\\n//     /**\\n//      * @dev Gets the identity registry\\n//      * @return Address of the identity registry\\n//      */\\n//     function getIdentityRegistry() external view returns (address) {\\n//         return _identityRegistry;\\n//     }\\n\\n//     /**\\n//      * @dev Checks if a country is blocked\\n//      * @param country Country code to check\\n//      * @return True if the country is blocked\\n//      */\\n//     function isCountryBlocked(uint16 country) external view returns (bool) {\\n//         return _blockedCountries[country];\\n//     }\\n\\n//     /**\\n//      * @dev Gets the maximum number of token holders\\n//      * @return Maximum number of token holders\\n//      */\\n//     function getMaxTokenHolders() external view returns (uint256) {\\n//         return _maxTokenHolders;\\n//     }\\n\\n//     /**\\n//      * @dev Gets the current number of token holders\\n//      * @return Current number of token holders\\n//      */\\n//     function tokenHolderCount() external view returns (uint256) {\\n//         return _tokenHolderCount;\\n//     }\\n// }\",\"keccak256\":\"0x9f99e67596e945239b537f2619908da8ecd2c9f1a7f22e4188010ee9b2ca211d\",\"license\":\"MIT\"},\"contracts/ComplianceStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.17;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\n/**\\n * @title ComplianceStorage\\n * @dev Storage contract for compliance data\\n */\\ncontract ComplianceStorage {\\n    // Identity Registry\\n    address internal _identityRegistry;\\n    \\n    // Mapping of countries that are blocked or allowed\\n    mapping(uint16 => bool) internal _blockedCountries;\\n    \\n    // Maximum number of token holders\\n    uint256 internal _maxTokenHolders;\\n    \\n    // Current number of token holders (investors with balance > 0)\\n    uint256 internal _tokenHolderCount;\\n    \\n    // Mapping of investor address => has tokens\\n    mapping(address => bool) internal _hasTokens;\\n}\",\"keccak256\":\"0x4303b9fddab5d73222ffb1c9640872fc5333b57d5dbe5f6a8a8f6390e7854f05\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161107738038061107783398101604081905261002f9161016a565b61003833610118565b6001600160a01b0381166100925760405162461bcd60e51b815260206004820152601b60248201527f436f6d706c69616e63653a20496e76616c696420616464726573730000000000604482015260640160405180910390fd5b600080546001600160a01b0319166001600160a01b038316908117825560405190917f8aa6172b9dcbe4f05892121059bc535d4743d706ba3ac6cbabf4a40de229e38891a26103e860028190556040519081527f4ab5470c324f1d6a6c7f333f53cda6d482a8ff05065ba9f6254f35da2cbb115a9060200160405180910390a15061019a565b600580546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b60006020828403121561017c57600080fd5b81516001600160a01b038116811461019357600080fd5b9392505050565b610ece806101a96000396000f3fe608060405234801561001057600080fd5b50600436106101005760003560e01c8063bf892eaa11610097578063da49808411610066578063da4980841461020d578063e46638e614610220578063f0314df014610233578063f2fde38b1461024657600080fd5b8063bf892eaa146101cc578063c8192c0d146101df578063cbf3f861146101f2578063d13e58461461020557600080fd5b806377283fc1116100d357806377283fc1146101715780638da5cb5b14610183578063ba18b029146101a8578063bc4d861b146101bb57600080fd5b806305abe2ec146101055780630aab56e6146101415780630c40a97514610156578063715018a614610169575b600080fd5b61012c610113366004610d1e565b61ffff1660009081526001602052604090205460ff1690565b60405190151581526020015b60405180910390f35b61015461014f366004610d57565b610259565b005b610154610164366004610d1e565b61031d565b6101546103cc565b6002545b604051908152602001610138565b6005546001600160a01b03165b6040516001600160a01b039091168152602001610138565b6101546101b6366004610d72565b6103e0565b6000546001600160a01b0316610190565b6101546101da366004610d57565b610481565b6101546101ed366004610d1e565b610546565b610154610200366004610d57565b610608565b600354610175565b61015461021b366004610d57565b6106ae565b61012c61022e366004610d8b565b61076a565b610154610241366004610d57565b610973565b610154610254366004610d57565b610a96565b3360009081526006602052604090205460ff166102915760405162461bcd60e51b815260040161028890610dc7565b60405180910390fd5b6001600160a01b03811660009081526004602052604090205460ff161561031a576001600160a01b0381166000908152600460205260408120805460ff1916905560038054916102e083610e29565b90915550506040516001600160a01b038216907ff15b38b70faafcca2eea9d692c1e27f3983ec798fd76ef973d1374fcf21988be90600090a25b50565b610325610b0c565b61ffff811660009081526001602052604090205460ff166103885760405162461bcd60e51b815260206004820152601f60248201527f436f6d706c69616e63653a20436f756e747279206e6f7420626c6f636b6564006044820152606401610288565b61ffff8116600081815260016020526040808220805460ff19169055517fc1da192d57f64ecc77c113c69fc3d50a4d872c9f261058892ad1d1e528cebedb9190a250565b6103d4610b0c565b6103de6000610b66565b565b6103e8610b0c565b600081116104465760405162461bcd60e51b815260206004820152602560248201527f436f6d706c69616e63653a20496e76616c6964206d617820746f6b656e20686f6044820152646c6465727360d81b6064820152608401610288565b60028190556040518181527f4ab5470c324f1d6a6c7f333f53cda6d482a8ff05065ba9f6254f35da2cbb115a9060200160405180910390a150565b610489610b0c565b6001600160a01b03811660009081526006602052604090205460ff166104fd5760405162461bcd60e51b815260206004820152602360248201527f436f6d706c69616e63653a20436f6e7472616374206973206e6f7420747275736044820152621d195960ea1b6064820152608401610288565b6001600160a01b038116600081815260066020526040808220805460ff19169055517fe077e45f89f0635acaf766ec2ea56cb9579a33b8732ecdc656fe2e7bdf7cac419190a250565b61054e610b0c565b61ffff811660009081526001602052604090205460ff16156105be5760405162461bcd60e51b815260206004820152602360248201527f436f6d706c69616e63653a20436f756e74727920616c726561647920626c6f636044820152621ad95960ea1b6064820152608401610288565b61ffff81166000818152600160208190526040808320805460ff1916909217909155517fb7116ad3b67b1909c11a3d57b86027908d192cfc943153afef5a62ef8a8485fe9190a250565b610610610b0c565b6001600160a01b0381166106665760405162461bcd60e51b815260206004820152601b60248201527f436f6d706c69616e63653a20496e76616c6964206164647265737300000000006044820152606401610288565b600080546001600160a01b0319166001600160a01b038316908117825560405190917f8aa6172b9dcbe4f05892121059bc535d4743d706ba3ac6cbabf4a40de229e38891a250565b3360009081526006602052604090205460ff166106dd5760405162461bcd60e51b815260040161028890610dc7565b6001600160a01b03811660009081526004602052604090205460ff1661031a576001600160a01b0381166000908152600460205260408120805460ff19166001179055600380549161072e83610e40565b90915550506040516001600160a01b038216907ff37f474e19bb3c37365785a7526055d8d23181bbda1834afd237ba72554ae75e90600090a250565b60006001600160a01b03841661078a5761078383610bb8565b905061096c565b6001600160a01b0383166107a05750600161096c565b60005460405163b9209e3360e01b81526001600160a01b0386811660048301529091169063b9209e3390602401602060405180830381865afa1580156107ea573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061080e9190610e59565b1580610885575060005460405163b9209e3360e01b81526001600160a01b0385811660048301529091169063b9209e3390602401602060405180830381865afa15801561085f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108839190610e59565b155b156108925750600061096c565b60008054604051637e42683b60e01b81526001600160a01b03868116600483015290911690637e42683b90602401602060405180830381865afa1580156108dd573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109019190610e7b565b61ffff811660009081526001602052604090205490915060ff161561092a57600091505061096c565b6001600160a01b03841660009081526004602052604090205460ff16158015610957575060025460035410155b1561096657600091505061096c565b60019150505b9392505050565b61097b610b0c565b6001600160a01b0381166109d15760405162461bcd60e51b815260206004820152601b60248201527f436f6d706c69616e63653a20496e76616c6964206164647265737300000000006044820152606401610288565b6001600160a01b03811660009081526006602052604090205460ff1615610a4a5760405162461bcd60e51b815260206004820152602760248201527f436f6d706c69616e63653a20436f6e747261637420697320616c7265616479206044820152661d1c9d5cdd195960ca1b6064820152608401610288565b6001600160a01b038116600081815260066020526040808220805460ff19166001179055517f4e87357acd951c4831877b6015585c4a7e20204cadf07178081e9929b3a13b5d9190a250565b610a9e610b0c565b6001600160a01b038116610b035760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152608401610288565b61031a81610b66565b6005546001600160a01b031633146103de5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610288565b600580546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b6000805460405163b9209e3360e01b81526001600160a01b0384811660048301529091169063b9209e3390602401602060405180830381865afa158015610c03573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c279190610e59565b610c3357506000919050565b60008054604051637e42683b60e01b81526001600160a01b03858116600483015290911690637e42683b90602401602060405180830381865afa158015610c7e573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ca29190610e7b565b61ffff811660009081526001602052604090205490915060ff1615610cca5750600092915050565b6001600160a01b03831660009081526004602052604090205460ff16158015610cf7575060025460035410155b15610d055750600092915050565b50600192915050565b61ffff8116811461031a57600080fd5b600060208284031215610d3057600080fd5b813561096c81610d0e565b80356001600160a01b0381168114610d5257600080fd5b919050565b600060208284031215610d6957600080fd5b61096c82610d3b565b600060208284031215610d8457600080fd5b5035919050565b600080600060608486031215610da057600080fd5b610da984610d3b565b9250610db760208501610d3b565b9150604084013590509250925092565b6020808252602c908201527f436f6d706c69616e63653a2043616c6c6572206973206e6f742061207472757360408201526b1d19590818dbdb9d1c9858dd60a21b606082015260800190565b634e487b7160e01b600052601160045260246000fd5b600081610e3857610e38610e13565b506000190190565b600060018201610e5257610e52610e13565b5060010190565b600060208284031215610e6b57600080fd5b8151801515811461096c57600080fd5b600060208284031215610e8d57600080fd5b815161096c81610d0e56fea2646970667358221220f565db3fbdeac239f3f68e4af479822e0e1ccc8b88d0166317c2342d37e459b364736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101005760003560e01c8063bf892eaa11610097578063da49808411610066578063da4980841461020d578063e46638e614610220578063f0314df014610233578063f2fde38b1461024657600080fd5b8063bf892eaa146101cc578063c8192c0d146101df578063cbf3f861146101f2578063d13e58461461020557600080fd5b806377283fc1116100d357806377283fc1146101715780638da5cb5b14610183578063ba18b029146101a8578063bc4d861b146101bb57600080fd5b806305abe2ec146101055780630aab56e6146101415780630c40a97514610156578063715018a614610169575b600080fd5b61012c610113366004610d1e565b61ffff1660009081526001602052604090205460ff1690565b60405190151581526020015b60405180910390f35b61015461014f366004610d57565b610259565b005b610154610164366004610d1e565b61031d565b6101546103cc565b6002545b604051908152602001610138565b6005546001600160a01b03165b6040516001600160a01b039091168152602001610138565b6101546101b6366004610d72565b6103e0565b6000546001600160a01b0316610190565b6101546101da366004610d57565b610481565b6101546101ed366004610d1e565b610546565b610154610200366004610d57565b610608565b600354610175565b61015461021b366004610d57565b6106ae565b61012c61022e366004610d8b565b61076a565b610154610241366004610d57565b610973565b610154610254366004610d57565b610a96565b3360009081526006602052604090205460ff166102915760405162461bcd60e51b815260040161028890610dc7565b60405180910390fd5b6001600160a01b03811660009081526004602052604090205460ff161561031a576001600160a01b0381166000908152600460205260408120805460ff1916905560038054916102e083610e29565b90915550506040516001600160a01b038216907ff15b38b70faafcca2eea9d692c1e27f3983ec798fd76ef973d1374fcf21988be90600090a25b50565b610325610b0c565b61ffff811660009081526001602052604090205460ff166103885760405162461bcd60e51b815260206004820152601f60248201527f436f6d706c69616e63653a20436f756e747279206e6f7420626c6f636b6564006044820152606401610288565b61ffff8116600081815260016020526040808220805460ff19169055517fc1da192d57f64ecc77c113c69fc3d50a4d872c9f261058892ad1d1e528cebedb9190a250565b6103d4610b0c565b6103de6000610b66565b565b6103e8610b0c565b600081116104465760405162461bcd60e51b815260206004820152602560248201527f436f6d706c69616e63653a20496e76616c6964206d617820746f6b656e20686f6044820152646c6465727360d81b6064820152608401610288565b60028190556040518181527f4ab5470c324f1d6a6c7f333f53cda6d482a8ff05065ba9f6254f35da2cbb115a9060200160405180910390a150565b610489610b0c565b6001600160a01b03811660009081526006602052604090205460ff166104fd5760405162461bcd60e51b815260206004820152602360248201527f436f6d706c69616e63653a20436f6e7472616374206973206e6f7420747275736044820152621d195960ea1b6064820152608401610288565b6001600160a01b038116600081815260066020526040808220805460ff19169055517fe077e45f89f0635acaf766ec2ea56cb9579a33b8732ecdc656fe2e7bdf7cac419190a250565b61054e610b0c565b61ffff811660009081526001602052604090205460ff16156105be5760405162461bcd60e51b815260206004820152602360248201527f436f6d706c69616e63653a20436f756e74727920616c726561647920626c6f636044820152621ad95960ea1b6064820152608401610288565b61ffff81166000818152600160208190526040808320805460ff1916909217909155517fb7116ad3b67b1909c11a3d57b86027908d192cfc943153afef5a62ef8a8485fe9190a250565b610610610b0c565b6001600160a01b0381166106665760405162461bcd60e51b815260206004820152601b60248201527f436f6d706c69616e63653a20496e76616c6964206164647265737300000000006044820152606401610288565b600080546001600160a01b0319166001600160a01b038316908117825560405190917f8aa6172b9dcbe4f05892121059bc535d4743d706ba3ac6cbabf4a40de229e38891a250565b3360009081526006602052604090205460ff166106dd5760405162461bcd60e51b815260040161028890610dc7565b6001600160a01b03811660009081526004602052604090205460ff1661031a576001600160a01b0381166000908152600460205260408120805460ff19166001179055600380549161072e83610e40565b90915550506040516001600160a01b038216907ff37f474e19bb3c37365785a7526055d8d23181bbda1834afd237ba72554ae75e90600090a250565b60006001600160a01b03841661078a5761078383610bb8565b905061096c565b6001600160a01b0383166107a05750600161096c565b60005460405163b9209e3360e01b81526001600160a01b0386811660048301529091169063b9209e3390602401602060405180830381865afa1580156107ea573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061080e9190610e59565b1580610885575060005460405163b9209e3360e01b81526001600160a01b0385811660048301529091169063b9209e3390602401602060405180830381865afa15801561085f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108839190610e59565b155b156108925750600061096c565b60008054604051637e42683b60e01b81526001600160a01b03868116600483015290911690637e42683b90602401602060405180830381865afa1580156108dd573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109019190610e7b565b61ffff811660009081526001602052604090205490915060ff161561092a57600091505061096c565b6001600160a01b03841660009081526004602052604090205460ff16158015610957575060025460035410155b1561096657600091505061096c565b60019150505b9392505050565b61097b610b0c565b6001600160a01b0381166109d15760405162461bcd60e51b815260206004820152601b60248201527f436f6d706c69616e63653a20496e76616c6964206164647265737300000000006044820152606401610288565b6001600160a01b03811660009081526006602052604090205460ff1615610a4a5760405162461bcd60e51b815260206004820152602760248201527f436f6d706c69616e63653a20436f6e747261637420697320616c7265616479206044820152661d1c9d5cdd195960ca1b6064820152608401610288565b6001600160a01b038116600081815260066020526040808220805460ff19166001179055517f4e87357acd951c4831877b6015585c4a7e20204cadf07178081e9929b3a13b5d9190a250565b610a9e610b0c565b6001600160a01b038116610b035760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152608401610288565b61031a81610b66565b6005546001600160a01b031633146103de5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610288565b600580546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b6000805460405163b9209e3360e01b81526001600160a01b0384811660048301529091169063b9209e3390602401602060405180830381865afa158015610c03573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c279190610e59565b610c3357506000919050565b60008054604051637e42683b60e01b81526001600160a01b03858116600483015290911690637e42683b90602401602060405180830381865afa158015610c7e573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ca29190610e7b565b61ffff811660009081526001602052604090205490915060ff1615610cca5750600092915050565b6001600160a01b03831660009081526004602052604090205460ff16158015610cf7575060025460035410155b15610d055750600092915050565b50600192915050565b61ffff8116811461031a57600080fd5b600060208284031215610d3057600080fd5b813561096c81610d0e565b80356001600160a01b0381168114610d5257600080fd5b919050565b600060208284031215610d6957600080fd5b61096c82610d3b565b600060208284031215610d8457600080fd5b5035919050565b600080600060608486031215610da057600080fd5b610da984610d3b565b9250610db760208501610d3b565b9150604084013590509250925092565b6020808252602c908201527f436f6d706c69616e63653a2043616c6c6572206973206e6f742061207472757360408201526b1d19590818dbdb9d1c9858dd60a21b606082015260800190565b634e487b7160e01b600052601160045260246000fd5b600081610e3857610e38610e13565b506000190190565b600060018201610e5257610e52610e13565b5060010190565b600060208284031215610e6b57600080fd5b8151801515811461096c57600080fd5b600060208284031215610e8d57600080fd5b815161096c81610d0e56fea2646970667358221220f565db3fbdeac239f3f68e4af479822e0e1ccc8b88d0166317c2342d37e459b364736f6c63430008110033",
+  "devdoc": {
+    "details": "Manages compliance rules for ERC-3643 token transfers",
+    "kind": "dev",
+    "methods": {
+      "addTokenHolder(address)": {
+        "details": "Updates token holder count when tokens are added to an account",
+        "params": {
+          "account": "Address of the account"
+        }
+      },
+      "addTrustedContract(address)": {
+        "details": "Adds a trusted contract that can call restricted functions",
+        "params": {
+          "contractAddress": "Address of the trusted contract"
+        }
+      },
+      "blockCountry(uint16)": {
+        "details": "Blocks a country",
+        "params": {
+          "country": "Country code to block"
+        }
+      },
+      "canTransfer(address,address,uint256)": {
+        "details": "Checks if a transfer is compliant",
+        "params": {
+          "amount": "Amount of tokens to transfer",
+          "from": "Address of the sender",
+          "to": "Address of the receiver"
+        },
+        "returns": {
+          "_0": "True if the transfer is compliant"
+        }
+      },
+      "constructor": {
+        "details": "Constructor",
+        "params": {
+          "identityRegistry": "Address of the identity registry"
+        }
+      },
+      "getIdentityRegistry()": {
+        "details": "Gets the identity registry",
+        "returns": {
+          "_0": "Address of the identity registry"
+        }
+      },
+      "getMaxTokenHolders()": {
+        "details": "Gets the maximum number of token holders",
+        "returns": {
+          "_0": "Maximum number of token holders"
+        }
+      },
+      "isCountryBlocked(uint16)": {
+        "details": "Checks if a country is blocked",
+        "params": {
+          "country": "Country code to check"
+        },
+        "returns": {
+          "_0": "True if the country is blocked"
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "removeTokenHolder(address)": {
+        "details": "Updates token holder count when tokens are removed from an account",
+        "params": {
+          "account": "Address of the account"
+        }
+      },
+      "removeTrustedContract(address)": {
+        "details": "Removes a trusted contract",
+        "params": {
+          "contractAddress": "Address of the trusted contract"
+        }
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "setIdentityRegistry(address)": {
+        "details": "Sets the identity registry",
+        "params": {
+          "identityRegistry": "Address of the identity registry"
+        }
+      },
+      "setMaxTokenHolders(uint256)": {
+        "details": "Sets the maximum number of token holders",
+        "params": {
+          "maxTokenHolders": "Maximum number of token holders"
+        }
+      },
+      "tokenHolderCount()": {
+        "details": "Gets the current number of token holders",
+        "returns": {
+          "_0": "Current number of token holders"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "unblockCountry(uint16)": {
+        "details": "Unblocks a country",
+        "params": {
+          "country": "Country code to unblock"
+        }
+      }
+    },
+    "title": "Compliance",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 1988,
+        "contract": "contracts/Compliance.sol:Compliance",
+        "label": "_identityRegistry",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 1992,
+        "contract": "contracts/Compliance.sol:Compliance",
+        "label": "_blockedCountries",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_uint16,t_bool)"
+      },
+      {
+        "astId": 1994,
+        "contract": "contracts/Compliance.sol:Compliance",
+        "label": "_maxTokenHolders",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 1996,
+        "contract": "contracts/Compliance.sol:Compliance",
+        "label": "_tokenHolderCount",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 2000,
+        "contract": "contracts/Compliance.sol:Compliance",
+        "label": "_hasTokens",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 7,
+        "contract": "contracts/Compliance.sol:Compliance",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_address"
+      },
+      {
+        "astId": 1507,
+        "contract": "contracts/Compliance.sol:Compliance",
+        "label": "_trustedContracts",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_mapping(t_address,t_bool)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_uint16,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_uint16",
+        "label": "mapping(uint16 => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_uint16": {
+        "encoding": "inplace",
+        "label": "uint16",
+        "numberOfBytes": "2"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

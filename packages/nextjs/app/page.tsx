@@ -323,10 +323,95 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto bg-base-200 p-6 rounded-xl shadow-lg overflow-hidden"
           >
-            <div className="relative aspect-[4/3] w-full">
-              <div className="absolute inset-0 bg-estate-500 flex items-center justify-center">
-                <span className="text-estate-100">System Architecture Diagram</span>
-              </div>
+<div className="relative aspect-[4/3] w-full overflow-hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 800 600"
+                className="w-full h-full"
+              >
+                {/* Background */}
+                <rect width="800" height="600" fill="#0e0e27" />
+                
+                {/* Containers */}
+                <rect x="200" y="20" width="400" height="70" rx="5" fill="#272757" stroke="#6868ac" strokeWidth="2"/>
+                <rect x="50" y="150" width="200" height="60" rx="5" fill="#272757" stroke="#44448e" strokeWidth="2"/>
+                <rect x="300" y="150" width="200" height="60" rx="5" fill="#272757" stroke="#44448e" strokeWidth="2"/>
+                <rect x="550" y="150" width="200" height="60" rx="5" fill="#272757" stroke="#44448e" strokeWidth="2"/>
+                <rect x="50" y="270" width="200" height="60" rx="5" fill="#272757" stroke="#8f8fc4" strokeWidth="2"/>
+                <rect x="300" y="270" width="200" height="60" rx="5" fill="#272757" stroke="#8f8fc4" strokeWidth="2"/>
+                <rect x="550" y="270" width="200" height="60" rx="5" fill="#272757" stroke="#8f8fc4" strokeWidth="2"/>
+                <rect x="175" y="390" width="450" height="70" rx="5" fill="#272757" stroke="#9c27b0" strokeWidth="2"/>
+                <rect x="175" y="500" width="450" height="70" rx="5" fill="#272757" stroke="#f44336" strokeWidth="2"/>
+                
+                {/* Contract names */}
+                <text x="400" y="55" fontFamily="Arial" fontSize="18" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">RealEstateSecurityManager</text>
+                <text x="400" y="75" fontFamily="Arial" fontSize="14" textAnchor="middle" fill="#b7b7d9">(Main Orchestrator)</text>
+                
+                <text x="150" y="185" fontFamily="Arial" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">DividendManager</text>
+                <text x="400" y="185" fontFamily="Arial" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">VestingManager</text>
+                <text x="650" y="185" fontFamily="Arial" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">SecondaryMarket</text>
+                
+                <text x="150" y="305" fontFamily="Arial" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">Compliance</text>
+                <text x="400" y="305" fontFamily="Arial" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">IdentityRegistry</text>
+                <text x="650" y="305" fontFamily="Arial" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">ClaimTopicsRegistry</text>
+                
+                <text x="400" y="425" fontFamily="Arial" fontSize="18" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">ERC3643Token</text>
+                <text x="400" y="445" fontFamily="Arial" fontSize="14" textAnchor="middle" fill="#b7b7d9">(Security Token)</text>
+                
+                <text x="400" y="535" fontFamily="Arial" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#e0e0ef">IdentityRegistryStorage</text>
+                <text x="400" y="555" fontFamily="Arial" fontSize="14" textAnchor="middle" fill="#b7b7d9">(Stores investor identities)</text>
+                
+                {/* Ownership arrows */}
+                <defs>
+                  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                    <path d="M0,0 L0,6 L9,3 z" fill="#f44336"/>
+                  </marker>
+                  
+                  {/* Agent role arrows */}
+                  <marker id="agentArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                    <path d="M0,0 L0,6 L9,3 z" fill="#6868ac"/>
+                  </marker>
+                </defs>
+                
+                {/* Ownership relationships */}
+                <line x1="400" y1="90" x2="150" y2="150" stroke="#f44336" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#arrow)"/>
+                <text x="230" y="120" fontFamily="Arial" fontSize="12" fill="#f44336" fontWeight="bold">OWNS</text>
+                
+                <line x1="400" y1="390" x2="150" y2="330" stroke="#6868ac" strokeWidth="2" strokeDasharray="3,2" markerEnd="url(#agentArrow)"/>
+                <text x="200" y="350" fontFamily="Arial" fontSize="12" fill="#6868ac" fontWeight="bold">TRUSTED</text>
+                
+                {/* Agent role relationships */}
+                <line x1="400" y1="90" x2="400" y2="150" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <text x="420" y="120" fontFamily="Arial" fontSize="12" fill="#6868ac">Calls</text>
+                
+                <line x1="400" y1="90" x2="650" y2="150" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <text x="570" y="120" fontFamily="Arial" fontSize="12" fill="#6868ac">Calls</text>
+                
+                <line x1="400" y1="90" x2="400" y2="270" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <text x="420" y="240" fontFamily="Arial" fontSize="12" fill="#6868ac">Interacts with</text>
+                
+                <line x1="250" y1="425" x2="175" y2="425" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <line x1="175" y1="425" x2="175" y2="90" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <text x="130" y="390" fontFamily="Arial" fontSize="12" fill="#6868ac">Agent Role</text>
+                
+                <line x1="250" y1="425" x2="175" y2="425" stroke="#6868ac" strokeWidth="2"/>
+                <line x1="175" y1="425" x2="175" y2="180" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <text x="120" y="340" fontFamily="Arial" fontSize="12" fill="#6868ac">Agent Role</text>
+                
+                <line x1="550" y1="425" x2="625" y2="425" stroke="#6868ac" strokeWidth="2"/>
+                <line x1="625" y1="425" x2="625" y2="180" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <text x="630" y="340" fontFamily="Arial" fontSize="12" fill="#6868ac">Agent Role</text>
+                
+                <line x1="400" y1="460" x2="400" y2="500" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <text x="420" y="480" fontFamily="Arial" fontSize="12" fill="#6868ac">Uses</text>
+                
+                {/* Legend */}
+                <rect x="630" y="530" width="150" height="60" rx="5" fill="#272757" stroke="#e0e0ef" strokeWidth="1"/>
+                <line x1="640" y1="545" x2="670" y2="545" stroke="#f44336" strokeWidth="2" strokeDasharray="5,3" markerEnd="url(#arrow)"/>
+                <text x="680" y="550" fontFamily="Arial" fontSize="12" fill="#e0e0ef">Ownership</text>
+                <line x1="640" y1="570" x2="670" y2="570" stroke="#6868ac" strokeWidth="2" markerEnd="url(#agentArrow)"/>
+                <text x="680" y="575" fontFamily="Arial" fontSize="12" fill="#e0e0ef">Agent Role/Call</text>
+              </svg>
             </div>
             
             <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">

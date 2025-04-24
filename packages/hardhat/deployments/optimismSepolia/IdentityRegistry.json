@@ -1,0 +1,712 @@
+{
+  "address": "0x607bD35bccaF2421eE9fBbbFFe793C6dD06B0d5A",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "trustedIssuersRegistry",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "claimTopicsRegistry",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "identityStorage",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "agent",
+          "type": "address"
+        }
+      ],
+      "name": "AgentAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "agent",
+          "type": "address"
+        }
+      ],
+      "name": "AgentRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "claimTopicsRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "ClaimTopicsRegistrySet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "countryCode",
+          "type": "uint16"
+        }
+      ],
+      "name": "CountryUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "identity",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "countryCode",
+          "type": "uint16"
+        }
+      ],
+      "name": "IdentityRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "identityStorage",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityStorageSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trustedIssuersRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "TrustedIssuersRegistrySet",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "agent",
+          "type": "address"
+        }
+      ],
+      "name": "addAgent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "deleteIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getClaimTopicsRegistry",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "getIdentity",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getIdentityStorage",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getTrustedIssuersRegistry",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "investorCountry",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "agent",
+          "type": "address"
+        }
+      ],
+      "name": "isAgent",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "isVerified",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "identity",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16",
+          "name": "countryCode",
+          "type": "uint16"
+        }
+      ],
+      "name": "registerIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "agent",
+          "type": "address"
+        }
+      ],
+      "name": "removeAgent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "claimTopicsRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setClaimTopicsRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "identityStorage",
+          "type": "address"
+        }
+      ],
+      "name": "setIdentityStorage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "trustedIssuersRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setTrustedIssuersRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16",
+          "name": "countryCode",
+          "type": "uint16"
+        }
+      ],
+      "name": "updateCountry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x8fc7d6640e688437e36e94188371926647013916c09d11fd4c74672ef3561744",
+  "receipt": {
+    "to": null,
+    "from": "0x6eC7e3C0831e7F48A85DFf4Ef5FB1cEBA0368128",
+    "contractAddress": "0x607bD35bccaF2421eE9fBbbFFe793C6dD06B0d5A",
+    "transactionIndex": 5,
+    "gasUsed": "1458916",
+    "logsBloom": "0x00000000010000000000000000000000000000000000000000800080800000000000010000000000002000000100000200000000000010000000000000000000001000002000000000000000000000000001000000000000000000100000000800000000020000000000400000000800000000000000000400010000000000400000000000000000000000000000000000000000000000000000000001000400000000000000000000000020000000000000000000000000000000010000000000000000000020000000000000000800000000000000000000000800200020000000000000000000000000000000010000000000000000000000000000000000",
+    "blockHash": "0x7df10db521b75e32f8b860b79f8ab667ce58277045b187872473bd7cdd14806b",
+    "transactionHash": "0x8fc7d6640e688437e36e94188371926647013916c09d11fd4c74672ef3561744",
+    "logs": [
+      {
+        "transactionIndex": 5,
+        "blockNumber": 26833210,
+        "transactionHash": "0x8fc7d6640e688437e36e94188371926647013916c09d11fd4c74672ef3561744",
+        "address": "0x607bD35bccaF2421eE9fBbbFFe793C6dD06B0d5A",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000006ec7e3c0831e7f48a85dff4ef5fb1ceba0368128"
+        ],
+        "data": "0x",
+        "logIndex": 2,
+        "blockHash": "0x7df10db521b75e32f8b860b79f8ab667ce58277045b187872473bd7cdd14806b"
+      },
+      {
+        "transactionIndex": 5,
+        "blockNumber": 26833210,
+        "transactionHash": "0x8fc7d6640e688437e36e94188371926647013916c09d11fd4c74672ef3561744",
+        "address": "0x607bD35bccaF2421eE9fBbbFFe793C6dD06B0d5A",
+        "topics": [
+          "0x1b98cb79e6f73020175fe87333f1b91ad6a881519c0afe30340c2599b2b4bde0",
+          "0x0000000000000000000000007295295d5128b849e55821d9c1caf27969332be9"
+        ],
+        "data": "0x",
+        "logIndex": 3,
+        "blockHash": "0x7df10db521b75e32f8b860b79f8ab667ce58277045b187872473bd7cdd14806b"
+      },
+      {
+        "transactionIndex": 5,
+        "blockNumber": 26833210,
+        "transactionHash": "0x8fc7d6640e688437e36e94188371926647013916c09d11fd4c74672ef3561744",
+        "address": "0x607bD35bccaF2421eE9fBbbFFe793C6dD06B0d5A",
+        "topics": [
+          "0x7170bf15b246e880b2369cd7c67d057760d8a35149e8c64dde91efa22bcc76d0",
+          "0x0000000000000000000000005b155a8232cd7331ef023a6442693ace240d2e9f"
+        ],
+        "data": "0x",
+        "logIndex": 4,
+        "blockHash": "0x7df10db521b75e32f8b860b79f8ab667ce58277045b187872473bd7cdd14806b"
+      },
+      {
+        "transactionIndex": 5,
+        "blockNumber": 26833210,
+        "transactionHash": "0x8fc7d6640e688437e36e94188371926647013916c09d11fd4c74672ef3561744",
+        "address": "0x607bD35bccaF2421eE9fBbbFFe793C6dD06B0d5A",
+        "topics": [
+          "0x2fa8b95c1db7afe99e3398f3792f008135cedc1fa26b0bb2ecd2352cd166d53c",
+          "0x00000000000000000000000024e711865cc72403349888bd71a80633e6848ce4"
+        ],
+        "data": "0x",
+        "logIndex": 5,
+        "blockHash": "0x7df10db521b75e32f8b860b79f8ab667ce58277045b187872473bd7cdd14806b"
+      }
+    ],
+    "blockNumber": 26833210,
+    "cumulativeGasUsed": "4541817",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x7295295D5128b849E55821D9c1cAF27969332be9",
+    "0x5b155a8232CD7331Ef023a6442693aCe240D2e9F",
+    "0x24E711865Cc72403349888BD71A80633E6848cE4"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "db646b56958dd39c955b59fe23fdd2e0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"trustedIssuersRegistry\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"claimTopicsRegistry\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"identityStorage\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"agent\",\"type\":\"address\"}],\"name\":\"AgentAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"agent\",\"type\":\"address\"}],\"name\":\"AgentRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"claimTopicsRegistry\",\"type\":\"address\"}],\"name\":\"ClaimTopicsRegistrySet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint16\",\"name\":\"countryCode\",\"type\":\"uint16\"}],\"name\":\"CountryUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"identity\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint16\",\"name\":\"countryCode\",\"type\":\"uint16\"}],\"name\":\"IdentityRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"IdentityRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"identityStorage\",\"type\":\"address\"}],\"name\":\"IdentityStorageSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trustedIssuersRegistry\",\"type\":\"address\"}],\"name\":\"TrustedIssuersRegistrySet\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"agent\",\"type\":\"address\"}],\"name\":\"addAgent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"deleteIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getClaimTopicsRegistry\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"getIdentity\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getIdentityStorage\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTrustedIssuersRegistry\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"investorCountry\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"agent\",\"type\":\"address\"}],\"name\":\"isAgent\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"isVerified\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"identity\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"countryCode\",\"type\":\"uint16\"}],\"name\":\"registerIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"agent\",\"type\":\"address\"}],\"name\":\"removeAgent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"claimTopicsRegistry\",\"type\":\"address\"}],\"name\":\"setClaimTopicsRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"identityStorage\",\"type\":\"address\"}],\"name\":\"setIdentityStorage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"trustedIssuersRegistry\",\"type\":\"address\"}],\"name\":\"setTrustedIssuersRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"countryCode\",\"type\":\"uint16\"}],\"name\":\"updateCountry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Registry for ERC-3643 identities with validation against trusted issuers\",\"kind\":\"dev\",\"methods\":{\"addAgent(address)\":{\"details\":\"Adds an agent\",\"params\":{\"agent\":\"Address of the agent\"}},\"constructor\":{\"details\":\"Constructor\",\"params\":{\"claimTopicsRegistry\":\"Address of the claim topics registry\",\"identityStorage\":\"Address of the identity storage\",\"trustedIssuersRegistry\":\"Address of the trusted issuers registry\"}},\"deleteIdentity(address)\":{\"details\":\"Removes an identity from the registry\",\"params\":{\"investorAddress\":\"Address of the investor\"}},\"getClaimTopicsRegistry()\":{\"details\":\"Gets the claim topics registry\",\"returns\":{\"_0\":\"Address of the claim topics registry\"}},\"getIdentity(address)\":{\"details\":\"Gets the identity of an investor\",\"params\":{\"investorAddress\":\"Address of the investor\"},\"returns\":{\"_0\":\"Address of the identity contract\"}},\"getIdentityStorage()\":{\"details\":\"Gets the identity storage\",\"returns\":{\"_0\":\"Address of the identity storage\"}},\"getTrustedIssuersRegistry()\":{\"details\":\"Gets the trusted issuers registry\",\"returns\":{\"_0\":\"Address of the trusted issuers registry\"}},\"investorCountry(address)\":{\"details\":\"Gets the country code of an investor\",\"params\":{\"investorAddress\":\"Address of the investor\"},\"returns\":{\"_0\":\"Country code\"}},\"isAgent(address)\":{\"details\":\"Checks if an address is an agent\",\"params\":{\"agent\":\"Address of the agent\"},\"returns\":{\"_0\":\"True if the address is an agent\"}},\"isVerified(address)\":{\"details\":\"Checks if an identity is verified against the trusted issuers\",\"params\":{\"investorAddress\":\"Address of the investor\"},\"returns\":{\"_0\":\"True if the identity is verified\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"registerIdentity(address,address,uint16)\":{\"details\":\"Registers an identity for an investor\",\"params\":{\"countryCode\":\"Country code of the investor\",\"identity\":\"Address of the identity contract\",\"investorAddress\":\"Address of the investor\"}},\"removeAgent(address)\":{\"details\":\"Removes an agent\",\"params\":{\"agent\":\"Address of the agent\"}},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"setClaimTopicsRegistry(address)\":{\"details\":\"Sets the claim topics registry\",\"params\":{\"claimTopicsRegistry\":\"Address of the claim topics registry\"}},\"setIdentityStorage(address)\":{\"details\":\"Sets the identity storage\",\"params\":{\"identityStorage\":\"Address of the identity storage\"}},\"setTrustedIssuersRegistry(address)\":{\"details\":\"Sets the trusted issuers registry\",\"params\":{\"trustedIssuersRegistry\":\"Address of the trusted issuers registry\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"updateCountry(address,uint16)\":{\"details\":\"Updates the country code of an investor\",\"params\":{\"countryCode\":\"New country code\",\"investorAddress\":\"Address of the investor\"}}},\"title\":\"IdentityRegistry\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/IdentityRegistry.sol\":\"IdentityRegistry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/IdentityRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.17;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\n/**\\n * @title IClaimTopicsRegistry\\n * @dev Interface for the ClaimTopicsRegistry contract\\n */\\ninterface IClaimTopicsRegistry {\\n    function getClaimTopics() external view returns (uint256[] memory);\\n}\\n\\n/**\\n * @title ITrustedIssuersRegistry\\n * @dev Interface for the TrustedIssuersRegistry contract\\n */\\ninterface ITrustedIssuersRegistry {\\n    function getTrustedIssuers() external view returns (address[] memory);\\n    function isTrustedIssuer(address _issuer) external view returns (bool);\\n    function getTrustedIssuerClaimTopics(address _trustedIssuer) external view returns (uint256[] memory);\\n}\\n\\n/**\\n * @title IIdentity\\n * @dev Interface for ERC-734 & ERC-735 (Identity and claims)\\n */\\ninterface IIdentity {\\n    function keyHasPurpose(bytes32 _key, uint256 _purpose) external view returns (bool);\\n    function getKey(bytes32 _key) external view returns (uint256 purpose, bytes32 keyType, bytes32 key);\\n    function getClaim(bytes32 _claimId) external view returns (\\n        uint256 topic,\\n        uint256 scheme,\\n        address issuer,\\n        bytes memory signature,\\n        bytes memory data,\\n        string memory uri\\n    );\\n    function getClaimIdsByTopic(uint256 _topic) external view returns (bytes32[] memory);\\n}\\n\\n/**\\n * @title IIdentityRegistryStorage\\n * @dev Interface for the IdentityRegistryStorage contract\\n */\\ninterface IIdentityRegistryStorage {\\n    function storeIdentity(address _investorAddress, address _identity, uint16 _countryCode) external;\\n    function removeIdentity(address _investorAddress) external;\\n    function updateCountry(address _investorAddress, uint16 _countryCode) external;\\n    function getIdentity(address _investorAddress) external view returns (address);\\n    function getCountry(address _investorAddress) external view returns (uint16);\\n}\\n\\n/**\\n * @title IdentityRegistry\\n * @dev Registry for ERC-3643 identities with validation against trusted issuers\\n */\\ncontract IdentityRegistry is Ownable {\\n    // Addresses of trusted contracts\\n    address private _trustedIssuersRegistry;\\n    address private _claimTopicsRegistry;\\n    address private _identityStorage;\\n    \\n    // Mapping of agent addresses\\n    mapping(address => bool) private _agents;\\n    \\n    // Events\\n    event IdentityRegistered(address indexed investorAddress, address identity, uint16 countryCode);\\n    event IdentityRemoved(address indexed investorAddress);\\n    event CountryUpdated(address indexed investorAddress, uint16 countryCode);\\n    event TrustedIssuersRegistrySet(address indexed trustedIssuersRegistry);\\n    event ClaimTopicsRegistrySet(address indexed claimTopicsRegistry);\\n    event IdentityStorageSet(address indexed identityStorage);\\n    event AgentAdded(address indexed agent);\\n    event AgentRemoved(address indexed agent);\\n\\n    /**\\n     * @dev Modifier to check if the sender is an agent\\n     */\\n    modifier onlyAgent() {\\n        require(_agents[msg.sender] || msg.sender == owner(), \\\"IdentityRegistry: Not an agent\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Constructor\\n     * @param trustedIssuersRegistry Address of the trusted issuers registry\\n     * @param claimTopicsRegistry Address of the claim topics registry\\n     * @param identityStorage Address of the identity storage\\n     */\\n    constructor(\\n        address trustedIssuersRegistry, \\n        address claimTopicsRegistry, \\n        address identityStorage\\n    ) {\\n        setTrustedIssuersRegistry(trustedIssuersRegistry);\\n        setClaimTopicsRegistry(claimTopicsRegistry);\\n        setIdentityStorage(identityStorage);\\n    }\\n\\n    /**\\n     * @dev Sets the trusted issuers registry\\n     * @param trustedIssuersRegistry Address of the trusted issuers registry\\n     */\\n    function setTrustedIssuersRegistry(address trustedIssuersRegistry) public onlyOwner {\\n        require(trustedIssuersRegistry != address(0), \\\"IdentityRegistry: Invalid address\\\");\\n        _trustedIssuersRegistry = trustedIssuersRegistry;\\n        emit TrustedIssuersRegistrySet(trustedIssuersRegistry);\\n    }\\n\\n    /**\\n     * @dev Sets the claim topics registry\\n     * @param claimTopicsRegistry Address of the claim topics registry\\n     */\\n    function setClaimTopicsRegistry(address claimTopicsRegistry) public onlyOwner {\\n        require(claimTopicsRegistry != address(0), \\\"IdentityRegistry: Invalid address\\\");\\n        _claimTopicsRegistry = claimTopicsRegistry;\\n        emit ClaimTopicsRegistrySet(claimTopicsRegistry);\\n    }\\n\\n    /**\\n     * @dev Sets the identity storage\\n     * @param identityStorage Address of the identity storage\\n     */\\n    function setIdentityStorage(address identityStorage) public onlyOwner {\\n        require(identityStorage != address(0), \\\"IdentityRegistry: Invalid address\\\");\\n        _identityStorage = identityStorage;\\n        emit IdentityStorageSet(identityStorage);\\n    }\\n\\n    /**\\n     * @dev Adds an agent\\n     * @param agent Address of the agent\\n     */\\n    function addAgent(address agent) external onlyOwner {\\n        require(agent != address(0), \\\"IdentityRegistry: Invalid address\\\");\\n        require(!_agents[agent], \\\"IdentityRegistry: Already an agent\\\");\\n        _agents[agent] = true;\\n        emit AgentAdded(agent);\\n    }\\n\\n    /**\\n     * @dev Removes an agent\\n     * @param agent Address of the agent\\n     */\\n    function removeAgent(address agent) external onlyOwner {\\n        require(_agents[agent], \\\"IdentityRegistry: Not an agent\\\");\\n        _agents[agent] = false;\\n        emit AgentRemoved(agent);\\n    }\\n\\n    /**\\n     * @dev Registers an identity for an investor\\n     * @param investorAddress Address of the investor\\n     * @param identity Address of the identity contract\\n     * @param countryCode Country code of the investor\\n     */\\n    function registerIdentity(address investorAddress, address identity, uint16 countryCode) external onlyAgent {\\n        require(investorAddress != address(0), \\\"IdentityRegistry: Invalid address\\\");\\n        require(identity != address(0), \\\"IdentityRegistry: Invalid identity\\\");\\n        require(IIdentityRegistryStorage(_identityStorage).getIdentity(investorAddress) == address(0), \\\"IdentityRegistry: Identity already registered\\\");\\n        \\n        IIdentityRegistryStorage(_identityStorage).storeIdentity(investorAddress, identity, countryCode);\\n        \\n        emit IdentityRegistered(investorAddress, identity, countryCode);\\n    }\\n\\n    /**\\n     * @dev Updates the country code of an investor\\n     * @param investorAddress Address of the investor\\n     * @param countryCode New country code\\n     */\\n    function updateCountry(address investorAddress, uint16 countryCode) external onlyAgent {\\n        require(IIdentityRegistryStorage(_identityStorage).getIdentity(investorAddress) != address(0), \\\"IdentityRegistry: Identity not registered\\\");\\n        \\n        IIdentityRegistryStorage(_identityStorage).updateCountry(investorAddress, countryCode);\\n        \\n        emit CountryUpdated(investorAddress, countryCode);\\n    }\\n\\n    /**\\n     * @dev Removes an identity from the registry\\n     * @param investorAddress Address of the investor\\n     */\\n    function deleteIdentity(address investorAddress) external onlyAgent {\\n        require(IIdentityRegistryStorage(_identityStorage).getIdentity(investorAddress) != address(0), \\\"IdentityRegistry: Identity not registered\\\");\\n        \\n        IIdentityRegistryStorage(_identityStorage).removeIdentity(investorAddress);\\n        \\n        emit IdentityRemoved(investorAddress);\\n    }\\n\\n    /**\\n     * @dev Checks if an identity is verified against the trusted issuers\\n     * @param investorAddress Address of the investor\\n     * @return True if the identity is verified\\n     */\\n    function isVerified(address investorAddress) external view returns (bool) {\\n        address identity = IIdentityRegistryStorage(_identityStorage).getIdentity(investorAddress);\\n        \\n        // If no identity is registered, return false\\n        if (identity == address(0)) {\\n            return false;\\n        }\\n        \\n        // Get required claim topics\\n        uint256[] memory claimTopics = IClaimTopicsRegistry(_claimTopicsRegistry).getClaimTopics();\\n        \\n        // Get trusted issuers\\n        address[] memory trustedIssuers = ITrustedIssuersRegistry(_trustedIssuersRegistry).getTrustedIssuers();\\n        \\n        // Check each claim topic\\n        for (uint256 i = 0; i < claimTopics.length; i++) {\\n            uint256 claimTopic = claimTopics[i];\\n            \\n            // Get all claims for this topic\\n            bytes32[] memory claimIds = IIdentity(identity).getClaimIdsByTopic(claimTopic);\\n            \\n            bool claimValid = false;\\n            \\n            // Check each claim\\n            for (uint256 j = 0; j < claimIds.length; j++) {\\n                bytes32 claimId = claimIds[j];\\n                \\n                (uint256 topic, uint256 scheme, address issuer, bytes memory signature, bytes memory data, string memory uri) = IIdentity(identity).getClaim(claimId);\\n\\n                \\n                // Check if issuer is trusted for this claim topic\\n                if (topic == claimTopic && \\n                    ITrustedIssuersRegistry(_trustedIssuersRegistry).isTrustedIssuer(issuer)) {\\n                    \\n                    uint256[] memory issuerClaimTopics = \\n                        ITrustedIssuersRegistry(_trustedIssuersRegistry).getTrustedIssuerClaimTopics(issuer);\\n                    \\n                    // Check if this issuer is trusted for this specific claim topic\\n                    for (uint256 k = 0; k < issuerClaimTopics.length; k++) {\\n                        if (issuerClaimTopics[k] == claimTopic) {\\n                            // Verify the claim by checking if the key has claim signing purpose (3)\\n                            bytes32 key = keccak256(abi.encode(issuer, claimTopic));\\n                            \\n                            if (IIdentity(issuer).keyHasPurpose(key, 3)) {\\n                                claimValid = true;\\n                                break;\\n                            }\\n                        }\\n                    }\\n                }\\n                \\n                if (claimValid) {\\n                    break;\\n                }\\n            }\\n            \\n            if (!claimValid) {\\n                return false;\\n            }\\n        }\\n        \\n        return true;\\n    }\\n\\n    /**\\n     * @dev Gets the identity of an investor\\n     * @param investorAddress Address of the investor\\n     * @return Address of the identity contract\\n     */\\n    function getIdentity(address investorAddress) external view returns (address) {\\n        return IIdentityRegistryStorage(_identityStorage).getIdentity(investorAddress);\\n    }\\n\\n    /**\\n     * @dev Gets the country code of an investor\\n     * @param investorAddress Address of the investor\\n     * @return Country code\\n     */\\n    function investorCountry(address investorAddress) external view returns (uint16) {\\n        return IIdentityRegistryStorage(_identityStorage).getCountry(investorAddress);\\n    }\\n\\n    /**\\n     * @dev Gets the trusted issuers registry\\n     * @return Address of the trusted issuers registry\\n     */\\n    function getTrustedIssuersRegistry() external view returns (address) {\\n        return _trustedIssuersRegistry;\\n    }\\n\\n    /**\\n     * @dev Gets the claim topics registry\\n     * @return Address of the claim topics registry\\n     */\\n    function getClaimTopicsRegistry() external view returns (address) {\\n        return _claimTopicsRegistry;\\n    }\\n\\n    /**\\n     * @dev Gets the identity storage\\n     * @return Address of the identity storage\\n     */\\n    function getIdentityStorage() external view returns (address) {\\n        return _identityStorage;\\n    }\\n\\n    /**\\n     * @dev Checks if an address is an agent\\n     * @param agent Address of the agent\\n     * @return True if the address is an agent\\n     */\\n    function isAgent(address agent) external view returns (bool) {\\n        return _agents[agent];\\n    }\\n}\",\"keccak256\":\"0x2fcc4ea1a1c70c9d2a8ce64b864778dad532fd69c7b3bc14e8e0762759eae65d\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b5060405162001b1238038062001b12833981016040819052620000349162000327565b6200003f3362000069565b6200004a83620000b9565b620000558262000162565b620000608162000207565b50505062000371565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b620000c3620002ac565b6001600160a01b038116620001185760405162461bcd60e51b8152602060048201526021602482015260008051602062001af28339815191526044820152607360f81b60648201526084015b60405180910390fd5b600180546001600160a01b0319166001600160a01b0383169081179091556040517f1b98cb79e6f73020175fe87333f1b91ad6a881519c0afe30340c2599b2b4bde090600090a250565b6200016c620002ac565b6001600160a01b038116620001bd5760405162461bcd60e51b8152602060048201526021602482015260008051602062001af28339815191526044820152607360f81b60648201526084016200010f565b600280546001600160a01b0319166001600160a01b0383169081179091556040517f7170bf15b246e880b2369cd7c67d057760d8a35149e8c64dde91efa22bcc76d090600090a250565b62000211620002ac565b6001600160a01b038116620002625760405162461bcd60e51b8152602060048201526021602482015260008051602062001af28339815191526044820152607360f81b60648201526084016200010f565b600380546001600160a01b0319166001600160a01b0383169081179091556040517f2fa8b95c1db7afe99e3398f3792f008135cedc1fa26b0bb2ecd2352cd166d53c90600090a250565b6000546001600160a01b03163314620003085760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064016200010f565b565b80516001600160a01b03811681146200032257600080fd5b919050565b6000806000606084860312156200033d57600080fd5b62000348846200030a565b925062000358602085016200030a565b915062000368604085016200030a565b90509250925092565b61177180620003816000396000f3fe608060405234801561001057600080fd5b50600436106101165760003560e01c80637e42683b116100a257806397a6278e1161007157806397a6278e14610256578063a8d29d1d14610269578063b9209e331461027c578063e744d7891461028f578063f2fde38b146102a257600080fd5b80637e42683b146101fb57806382492c3b1461022157806384e79842146102325780638da5cb5b1461024557600080fd5b80633b239a7f116100e95780633b239a7f146101a5578063454a03e0146101ba57806347ad53e3146101cd578063670af6a9146101e0578063715018a6146101f357600080fd5b80631eb5bba51461011b5780631ffbb064146101455780632b19d044146101815780632fea7b8114610192575b600080fd5b6001546001600160a01b03165b6040516001600160a01b0390911681526020015b60405180910390f35b610171610153366004611248565b6001600160a01b031660009081526004602052604090205460ff1690565b604051901515815260200161013c565b6003546001600160a01b0316610128565b6101286101a0366004611248565b6102b5565b6101b86101b336600461127c565b61032a565b005b6101b86101c83660046112b5565b6104bb565b6101b86101db366004611248565b610720565b6101b86101ee366004611248565b610798565b6101b8610810565b61020e610209366004611248565b610824565b60405161ffff909116815260200161013c565b6002546001600160a01b0316610128565b6101b8610240366004611248565b610893565b6000546001600160a01b0316610128565b6101b8610264366004611248565b610981565b6101b8610277366004611248565b610a0a565b61017161028a366004611248565b610b79565b6101b861029d366004611248565b611098565b6101b86102b0366004611248565b611110565b600354604051632fea7b8160e01b81526001600160a01b0383811660048301526000921690632fea7b8190602401602060405180830381865afa158015610300573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103249190611300565b92915050565b3360009081526004602052604090205460ff168061035257506000546001600160a01b031633145b6103775760405162461bcd60e51b815260040161036e9061131d565b60405180910390fd5b600354604051632fea7b8160e01b81526001600160a01b0384811660048301526000921690632fea7b8190602401602060405180830381865afa1580156103c2573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103e69190611300565b6001600160a01b03160361040c5760405162461bcd60e51b815260040161036e90611354565b600354604051633b239a7f60e01b81526001600160a01b03848116600483015261ffff8416602483015290911690633b239a7f90604401600060405180830381600087803b15801561045d57600080fd5b505af1158015610471573d6000803e3d6000fd5b505060405161ffff841681526001600160a01b03851692507f04ed3b726495c2dca1ff1215d9ca54e1a4030abb5e82b0f6ce55702416cee853915060200160405180910390a25050565b3360009081526004602052604090205460ff16806104e357506000546001600160a01b031633145b6104ff5760405162461bcd60e51b815260040161036e9061131d565b6001600160a01b0383166105255760405162461bcd60e51b815260040161036e9061139d565b6001600160a01b0382166105865760405162461bcd60e51b815260206004820152602260248201527f4964656e7469747952656769737472793a20496e76616c6964206964656e7469604482015261747960f01b606482015260840161036e565b600354604051632fea7b8160e01b81526001600160a01b0385811660048301526000921690632fea7b8190602401602060405180830381865afa1580156105d1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105f59190611300565b6001600160a01b0316146106615760405162461bcd60e51b815260206004820152602d60248201527f4964656e7469747952656769737472793a204964656e7469747920616c72656160448201526c191e481c9959da5cdd195c9959609a1b606482015260840161036e565b60035460405163d48fca2360e01b81526001600160a01b038581166004830152848116602483015261ffff841660448301529091169063d48fca2390606401600060405180830381600087803b1580156106ba57600080fd5b505af11580156106ce573d6000803e3d6000fd5b5050604080516001600160a01b03868116825261ffff86166020830152871693507f74cfd0a46a2905d52ee4947cc1ac80b597bd474e7a0496263f14119e7494728692500160405180910390a2505050565b610728611189565b6001600160a01b03811661074e5760405162461bcd60e51b815260040161036e9061139d565b600380546001600160a01b0319166001600160a01b0383169081179091556040517f2fa8b95c1db7afe99e3398f3792f008135cedc1fa26b0bb2ecd2352cd166d53c90600090a250565b6107a0611189565b6001600160a01b0381166107c65760405162461bcd60e51b815260040161036e9061139d565b600280546001600160a01b0319166001600160a01b0383169081179091556040517f7170bf15b246e880b2369cd7c67d057760d8a35149e8c64dde91efa22bcc76d090600090a250565b610818611189565b61082260006111e3565b565b60035460405163d821f92d60e01b81526001600160a01b038381166004830152600092169063d821f92d90602401602060405180830381865afa15801561086f573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061032491906113de565b61089b611189565b6001600160a01b0381166108c15760405162461bcd60e51b815260040161036e9061139d565b6001600160a01b03811660009081526004602052604090205460ff16156109355760405162461bcd60e51b815260206004820152602260248201527f4964656e7469747952656769737472793a20416c726561647920616e206167656044820152611b9d60f21b606482015260840161036e565b6001600160a01b038116600081815260046020526040808220805460ff19166001179055517ff68e73cec97f2d70aa641fb26e87a4383686e2efacb648f2165aeb02ac562ec59190a250565b610989611189565b6001600160a01b03811660009081526004602052604090205460ff166109c15760405162461bcd60e51b815260040161036e9061131d565b6001600160a01b038116600081815260046020526040808220805460ff19169055517fed9c8ad8d5a0a66898ea49d2956929c93ae2e8bd50281b2ed897c5d1a6737e0b9190a250565b3360009081526004602052604090205460ff1680610a3257506000546001600160a01b031633145b610a4e5760405162461bcd60e51b815260040161036e9061131d565b600354604051632fea7b8160e01b81526001600160a01b0383811660048301526000921690632fea7b8190602401602060405180830381865afa158015610a99573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610abd9190611300565b6001600160a01b031603610ae35760405162461bcd60e51b815260040161036e90611354565b6003546040516360f978d560e11b81526001600160a01b0383811660048301529091169063c1f2f1aa90602401600060405180830381600087803b158015610b2a57600080fd5b505af1158015610b3e573d6000803e3d6000fd5b50506040516001600160a01b03841692507f374ace31388bb8ee152e1f7ad5e216944c28a32dfedb6c9353ba26bf0cdbb15a9150600090a250565b600354604051632fea7b8160e01b81526001600160a01b0383811660048301526000928392911690632fea7b8190602401602060405180830381865afa158015610bc7573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610beb9190611300565b90506001600160a01b038116610c045750600092915050565b600254604080516337c2758160e21b815290516000926001600160a01b03169163df09d60491600480830192869291908290030181865afa158015610c4d573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610c759190810190611466565b90506000600160009054906101000a90046001600160a01b03166001600160a01b031663d9dd24c56040518163ffffffff1660e01b8152600401600060405180830381865afa158015610ccc573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610cf491908101906114fc565b905060005b825181101561108c576000838281518110610d1657610d1661158b565b602002602001015190506000856001600160a01b03166380e9e9e1836040518263ffffffff1660e01b8152600401610d5091815260200190565b600060405180830381865afa158015610d6d573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610d959190810190611466565b90506000805b8251811015611061576000838281518110610db857610db861158b565b602002602001015190506000806000806000808e6001600160a01b031663c9100bcb886040518263ffffffff1660e01b8152600401610df991815260200190565b600060405180830381865afa158015610e16573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610e3e9190810190611630565b9550955095509550955095508a86148015610ec25750600154604051633bcbb46960e21b81526001600160a01b0386811660048301529091169063ef2ed1a490602401602060405180830381865afa158015610e9e573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ec291906116f2565b1561103557600154604051631851f64f60e31b81526001600160a01b038681166004830152600092169063c28fb27890602401600060405180830381865afa158015610f12573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610f3a9190810190611466565b905060005b8151811015611032578c828281518110610f5b57610f5b61158b565b60200260200101510361102057604080516001600160a01b03881660208201529081018e905260009060600160408051808303601f1901815290829052805160209091012063d202158d60e01b8252600482018190526003602483015291506001600160a01b0388169063d202158d90604401602060405180830381865afa158015610feb573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061100f91906116f2565b1561101e5760019b5050611032565b505b8061102a81611714565b915050610f3f565b50505b88156110475750505050505050611061565b50505050505050808061105990611714565b915050610d9b565b50806110765750600098975050505050505050565b505050808061108490611714565b915050610cf9565b50600195945050505050565b6110a0611189565b6001600160a01b0381166110c65760405162461bcd60e51b815260040161036e9061139d565b600180546001600160a01b0319166001600160a01b0383169081179091556040517f1b98cb79e6f73020175fe87333f1b91ad6a881519c0afe30340c2599b2b4bde090600090a250565b611118611189565b6001600160a01b03811661117d5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b606482015260840161036e565b611186816111e3565b50565b6000546001600160a01b031633146108225760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015260640161036e565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6001600160a01b038116811461118657600080fd5b60006020828403121561125a57600080fd5b813561126581611233565b9392505050565b61ffff8116811461118657600080fd5b6000806040838503121561128f57600080fd5b823561129a81611233565b915060208301356112aa8161126c565b809150509250929050565b6000806000606084860312156112ca57600080fd5b83356112d581611233565b925060208401356112e581611233565b915060408401356112f58161126c565b809150509250925092565b60006020828403121561131257600080fd5b815161126581611233565b6020808252601e908201527f4964656e7469747952656769737472793a204e6f7420616e206167656e740000604082015260600190565b60208082526029908201527f4964656e7469747952656769737472793a204964656e74697479206e6f7420726040820152681959da5cdd195c995960ba1b606082015260800190565b60208082526021908201527f4964656e7469747952656769737472793a20496e76616c6964206164647265736040820152607360f81b606082015260800190565b6000602082840312156113f057600080fd5b81516112658161126c565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff8111828210171561143a5761143a6113fb565b604052919050565b600067ffffffffffffffff82111561145c5761145c6113fb565b5060051b60200190565b6000602080838503121561147957600080fd5b825167ffffffffffffffff81111561149057600080fd5b8301601f810185136114a157600080fd5b80516114b46114af82611442565b611411565b81815260059190911b820183019083810190878311156114d357600080fd5b928401925b828410156114f1578351825292840192908401906114d8565b979650505050505050565b6000602080838503121561150f57600080fd5b825167ffffffffffffffff81111561152657600080fd5b8301601f8101851361153757600080fd5b80516115456114af82611442565b81815260059190911b8201830190838101908783111561156457600080fd5b928401925b828410156114f157835161157c81611233565b82529284019290840190611569565b634e487b7160e01b600052603260045260246000fd5b600067ffffffffffffffff8311156115bb576115bb6113fb565b60206115cf601f8501601f19168201611411565b91508382528484840111156115e357600080fd5b60005b848110156115ff578381015183820183015281016115e6565b506000818584010152509392505050565b600082601f83011261162157600080fd5b611265838351602085016115a1565b60008060008060008060c0878903121561164957600080fd5b8651955060208701519450604087015161166281611233565b606088015190945067ffffffffffffffff8082111561168057600080fd5b61168c8a838b01611610565b945060808901519150808211156116a257600080fd5b6116ae8a838b01611610565b935060a08901519150808211156116c457600080fd5b508701601f810189136116d657600080fd5b6116e5898251602084016115a1565b9150509295509295509295565b60006020828403121561170457600080fd5b8151801515811461126557600080fd5b60006001820161173457634e487b7160e01b600052601160045260246000fd5b506001019056fea2646970667358221220fce85859d54173ef6436491c0d72828fb2784a1ec1b3dfaf59e2d3fd46d0beaa64736f6c634300081100334964656e7469747952656769737472793a20496e76616c696420616464726573",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101165760003560e01c80637e42683b116100a257806397a6278e1161007157806397a6278e14610256578063a8d29d1d14610269578063b9209e331461027c578063e744d7891461028f578063f2fde38b146102a257600080fd5b80637e42683b146101fb57806382492c3b1461022157806384e79842146102325780638da5cb5b1461024557600080fd5b80633b239a7f116100e95780633b239a7f146101a5578063454a03e0146101ba57806347ad53e3146101cd578063670af6a9146101e0578063715018a6146101f357600080fd5b80631eb5bba51461011b5780631ffbb064146101455780632b19d044146101815780632fea7b8114610192575b600080fd5b6001546001600160a01b03165b6040516001600160a01b0390911681526020015b60405180910390f35b610171610153366004611248565b6001600160a01b031660009081526004602052604090205460ff1690565b604051901515815260200161013c565b6003546001600160a01b0316610128565b6101286101a0366004611248565b6102b5565b6101b86101b336600461127c565b61032a565b005b6101b86101c83660046112b5565b6104bb565b6101b86101db366004611248565b610720565b6101b86101ee366004611248565b610798565b6101b8610810565b61020e610209366004611248565b610824565b60405161ffff909116815260200161013c565b6002546001600160a01b0316610128565b6101b8610240366004611248565b610893565b6000546001600160a01b0316610128565b6101b8610264366004611248565b610981565b6101b8610277366004611248565b610a0a565b61017161028a366004611248565b610b79565b6101b861029d366004611248565b611098565b6101b86102b0366004611248565b611110565b600354604051632fea7b8160e01b81526001600160a01b0383811660048301526000921690632fea7b8190602401602060405180830381865afa158015610300573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103249190611300565b92915050565b3360009081526004602052604090205460ff168061035257506000546001600160a01b031633145b6103775760405162461bcd60e51b815260040161036e9061131d565b60405180910390fd5b600354604051632fea7b8160e01b81526001600160a01b0384811660048301526000921690632fea7b8190602401602060405180830381865afa1580156103c2573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103e69190611300565b6001600160a01b03160361040c5760405162461bcd60e51b815260040161036e90611354565b600354604051633b239a7f60e01b81526001600160a01b03848116600483015261ffff8416602483015290911690633b239a7f90604401600060405180830381600087803b15801561045d57600080fd5b505af1158015610471573d6000803e3d6000fd5b505060405161ffff841681526001600160a01b03851692507f04ed3b726495c2dca1ff1215d9ca54e1a4030abb5e82b0f6ce55702416cee853915060200160405180910390a25050565b3360009081526004602052604090205460ff16806104e357506000546001600160a01b031633145b6104ff5760405162461bcd60e51b815260040161036e9061131d565b6001600160a01b0383166105255760405162461bcd60e51b815260040161036e9061139d565b6001600160a01b0382166105865760405162461bcd60e51b815260206004820152602260248201527f4964656e7469747952656769737472793a20496e76616c6964206964656e7469604482015261747960f01b606482015260840161036e565b600354604051632fea7b8160e01b81526001600160a01b0385811660048301526000921690632fea7b8190602401602060405180830381865afa1580156105d1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105f59190611300565b6001600160a01b0316146106615760405162461bcd60e51b815260206004820152602d60248201527f4964656e7469747952656769737472793a204964656e7469747920616c72656160448201526c191e481c9959da5cdd195c9959609a1b606482015260840161036e565b60035460405163d48fca2360e01b81526001600160a01b038581166004830152848116602483015261ffff841660448301529091169063d48fca2390606401600060405180830381600087803b1580156106ba57600080fd5b505af11580156106ce573d6000803e3d6000fd5b5050604080516001600160a01b03868116825261ffff86166020830152871693507f74cfd0a46a2905d52ee4947cc1ac80b597bd474e7a0496263f14119e7494728692500160405180910390a2505050565b610728611189565b6001600160a01b03811661074e5760405162461bcd60e51b815260040161036e9061139d565b600380546001600160a01b0319166001600160a01b0383169081179091556040517f2fa8b95c1db7afe99e3398f3792f008135cedc1fa26b0bb2ecd2352cd166d53c90600090a250565b6107a0611189565b6001600160a01b0381166107c65760405162461bcd60e51b815260040161036e9061139d565b600280546001600160a01b0319166001600160a01b0383169081179091556040517f7170bf15b246e880b2369cd7c67d057760d8a35149e8c64dde91efa22bcc76d090600090a250565b610818611189565b61082260006111e3565b565b60035460405163d821f92d60e01b81526001600160a01b038381166004830152600092169063d821f92d90602401602060405180830381865afa15801561086f573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061032491906113de565b61089b611189565b6001600160a01b0381166108c15760405162461bcd60e51b815260040161036e9061139d565b6001600160a01b03811660009081526004602052604090205460ff16156109355760405162461bcd60e51b815260206004820152602260248201527f4964656e7469747952656769737472793a20416c726561647920616e206167656044820152611b9d60f21b606482015260840161036e565b6001600160a01b038116600081815260046020526040808220805460ff19166001179055517ff68e73cec97f2d70aa641fb26e87a4383686e2efacb648f2165aeb02ac562ec59190a250565b610989611189565b6001600160a01b03811660009081526004602052604090205460ff166109c15760405162461bcd60e51b815260040161036e9061131d565b6001600160a01b038116600081815260046020526040808220805460ff19169055517fed9c8ad8d5a0a66898ea49d2956929c93ae2e8bd50281b2ed897c5d1a6737e0b9190a250565b3360009081526004602052604090205460ff1680610a3257506000546001600160a01b031633145b610a4e5760405162461bcd60e51b815260040161036e9061131d565b600354604051632fea7b8160e01b81526001600160a01b0383811660048301526000921690632fea7b8190602401602060405180830381865afa158015610a99573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610abd9190611300565b6001600160a01b031603610ae35760405162461bcd60e51b815260040161036e90611354565b6003546040516360f978d560e11b81526001600160a01b0383811660048301529091169063c1f2f1aa90602401600060405180830381600087803b158015610b2a57600080fd5b505af1158015610b3e573d6000803e3d6000fd5b50506040516001600160a01b03841692507f374ace31388bb8ee152e1f7ad5e216944c28a32dfedb6c9353ba26bf0cdbb15a9150600090a250565b600354604051632fea7b8160e01b81526001600160a01b0383811660048301526000928392911690632fea7b8190602401602060405180830381865afa158015610bc7573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610beb9190611300565b90506001600160a01b038116610c045750600092915050565b600254604080516337c2758160e21b815290516000926001600160a01b03169163df09d60491600480830192869291908290030181865afa158015610c4d573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610c759190810190611466565b90506000600160009054906101000a90046001600160a01b03166001600160a01b031663d9dd24c56040518163ffffffff1660e01b8152600401600060405180830381865afa158015610ccc573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610cf491908101906114fc565b905060005b825181101561108c576000838281518110610d1657610d1661158b565b602002602001015190506000856001600160a01b03166380e9e9e1836040518263ffffffff1660e01b8152600401610d5091815260200190565b600060405180830381865afa158015610d6d573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610d959190810190611466565b90506000805b8251811015611061576000838281518110610db857610db861158b565b602002602001015190506000806000806000808e6001600160a01b031663c9100bcb886040518263ffffffff1660e01b8152600401610df991815260200190565b600060405180830381865afa158015610e16573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610e3e9190810190611630565b9550955095509550955095508a86148015610ec25750600154604051633bcbb46960e21b81526001600160a01b0386811660048301529091169063ef2ed1a490602401602060405180830381865afa158015610e9e573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ec291906116f2565b1561103557600154604051631851f64f60e31b81526001600160a01b038681166004830152600092169063c28fb27890602401600060405180830381865afa158015610f12573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610f3a9190810190611466565b905060005b8151811015611032578c828281518110610f5b57610f5b61158b565b60200260200101510361102057604080516001600160a01b03881660208201529081018e905260009060600160408051808303601f1901815290829052805160209091012063d202158d60e01b8252600482018190526003602483015291506001600160a01b0388169063d202158d90604401602060405180830381865afa158015610feb573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061100f91906116f2565b1561101e5760019b5050611032565b505b8061102a81611714565b915050610f3f565b50505b88156110475750505050505050611061565b50505050505050808061105990611714565b915050610d9b565b50806110765750600098975050505050505050565b505050808061108490611714565b915050610cf9565b50600195945050505050565b6110a0611189565b6001600160a01b0381166110c65760405162461bcd60e51b815260040161036e9061139d565b600180546001600160a01b0319166001600160a01b0383169081179091556040517f1b98cb79e6f73020175fe87333f1b91ad6a881519c0afe30340c2599b2b4bde090600090a250565b611118611189565b6001600160a01b03811661117d5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b606482015260840161036e565b611186816111e3565b50565b6000546001600160a01b031633146108225760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015260640161036e565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6001600160a01b038116811461118657600080fd5b60006020828403121561125a57600080fd5b813561126581611233565b9392505050565b61ffff8116811461118657600080fd5b6000806040838503121561128f57600080fd5b823561129a81611233565b915060208301356112aa8161126c565b809150509250929050565b6000806000606084860312156112ca57600080fd5b83356112d581611233565b925060208401356112e581611233565b915060408401356112f58161126c565b809150509250925092565b60006020828403121561131257600080fd5b815161126581611233565b6020808252601e908201527f4964656e7469747952656769737472793a204e6f7420616e206167656e740000604082015260600190565b60208082526029908201527f4964656e7469747952656769737472793a204964656e74697479206e6f7420726040820152681959da5cdd195c995960ba1b606082015260800190565b60208082526021908201527f4964656e7469747952656769737472793a20496e76616c6964206164647265736040820152607360f81b606082015260800190565b6000602082840312156113f057600080fd5b81516112658161126c565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff8111828210171561143a5761143a6113fb565b604052919050565b600067ffffffffffffffff82111561145c5761145c6113fb565b5060051b60200190565b6000602080838503121561147957600080fd5b825167ffffffffffffffff81111561149057600080fd5b8301601f810185136114a157600080fd5b80516114b46114af82611442565b611411565b81815260059190911b820183019083810190878311156114d357600080fd5b928401925b828410156114f1578351825292840192908401906114d8565b979650505050505050565b6000602080838503121561150f57600080fd5b825167ffffffffffffffff81111561152657600080fd5b8301601f8101851361153757600080fd5b80516115456114af82611442565b81815260059190911b8201830190838101908783111561156457600080fd5b928401925b828410156114f157835161157c81611233565b82529284019290840190611569565b634e487b7160e01b600052603260045260246000fd5b600067ffffffffffffffff8311156115bb576115bb6113fb565b60206115cf601f8501601f19168201611411565b91508382528484840111156115e357600080fd5b60005b848110156115ff578381015183820183015281016115e6565b506000818584010152509392505050565b600082601f83011261162157600080fd5b611265838351602085016115a1565b60008060008060008060c0878903121561164957600080fd5b8651955060208701519450604087015161166281611233565b606088015190945067ffffffffffffffff8082111561168057600080fd5b61168c8a838b01611610565b945060808901519150808211156116a257600080fd5b6116ae8a838b01611610565b935060a08901519150808211156116c457600080fd5b508701601f810189136116d657600080fd5b6116e5898251602084016115a1565b9150509295509295509295565b60006020828403121561170457600080fd5b8151801515811461126557600080fd5b60006001820161173457634e487b7160e01b600052601160045260246000fd5b506001019056fea2646970667358221220fce85859d54173ef6436491c0d72828fb2784a1ec1b3dfaf59e2d3fd46d0beaa64736f6c63430008110033",
+  "devdoc": {
+    "details": "Registry for ERC-3643 identities with validation against trusted issuers",
+    "kind": "dev",
+    "methods": {
+      "addAgent(address)": {
+        "details": "Adds an agent",
+        "params": {
+          "agent": "Address of the agent"
+        }
+      },
+      "constructor": {
+        "details": "Constructor",
+        "params": {
+          "claimTopicsRegistry": "Address of the claim topics registry",
+          "identityStorage": "Address of the identity storage",
+          "trustedIssuersRegistry": "Address of the trusted issuers registry"
+        }
+      },
+      "deleteIdentity(address)": {
+        "details": "Removes an identity from the registry",
+        "params": {
+          "investorAddress": "Address of the investor"
+        }
+      },
+      "getClaimTopicsRegistry()": {
+        "details": "Gets the claim topics registry",
+        "returns": {
+          "_0": "Address of the claim topics registry"
+        }
+      },
+      "getIdentity(address)": {
+        "details": "Gets the identity of an investor",
+        "params": {
+          "investorAddress": "Address of the investor"
+        },
+        "returns": {
+          "_0": "Address of the identity contract"
+        }
+      },
+      "getIdentityStorage()": {
+        "details": "Gets the identity storage",
+        "returns": {
+          "_0": "Address of the identity storage"
+        }
+      },
+      "getTrustedIssuersRegistry()": {
+        "details": "Gets the trusted issuers registry",
+        "returns": {
+          "_0": "Address of the trusted issuers registry"
+        }
+      },
+      "investorCountry(address)": {
+        "details": "Gets the country code of an investor",
+        "params": {
+          "investorAddress": "Address of the investor"
+        },
+        "returns": {
+          "_0": "Country code"
+        }
+      },
+      "isAgent(address)": {
+        "details": "Checks if an address is an agent",
+        "params": {
+          "agent": "Address of the agent"
+        },
+        "returns": {
+          "_0": "True if the address is an agent"
+        }
+      },
+      "isVerified(address)": {
+        "details": "Checks if an identity is verified against the trusted issuers",
+        "params": {
+          "investorAddress": "Address of the investor"
+        },
+        "returns": {
+          "_0": "True if the identity is verified"
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "registerIdentity(address,address,uint16)": {
+        "details": "Registers an identity for an investor",
+        "params": {
+          "countryCode": "Country code of the investor",
+          "identity": "Address of the identity contract",
+          "investorAddress": "Address of the investor"
+        }
+      },
+      "removeAgent(address)": {
+        "details": "Removes an agent",
+        "params": {
+          "agent": "Address of the agent"
+        }
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "setClaimTopicsRegistry(address)": {
+        "details": "Sets the claim topics registry",
+        "params": {
+          "claimTopicsRegistry": "Address of the claim topics registry"
+        }
+      },
+      "setIdentityStorage(address)": {
+        "details": "Sets the identity storage",
+        "params": {
+          "identityStorage": "Address of the identity storage"
+        }
+      },
+      "setTrustedIssuersRegistry(address)": {
+        "details": "Sets the trusted issuers registry",
+        "params": {
+          "trustedIssuersRegistry": "Address of the trusted issuers registry"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "updateCountry(address,uint16)": {
+        "details": "Updates the country code of an investor",
+        "params": {
+          "countryCode": "New country code",
+          "investorAddress": "Address of the investor"
+        }
+      }
+    },
+    "title": "IdentityRegistry",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 7,
+        "contract": "contracts/IdentityRegistry.sol:IdentityRegistry",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 3682,
+        "contract": "contracts/IdentityRegistry.sol:IdentityRegistry",
+        "label": "_trustedIssuersRegistry",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 3684,
+        "contract": "contracts/IdentityRegistry.sol:IdentityRegistry",
+        "label": "_claimTopicsRegistry",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_address"
+      },
+      {
+        "astId": 3686,
+        "contract": "contracts/IdentityRegistry.sol:IdentityRegistry",
+        "label": "_identityStorage",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_address"
+      },
+      {
+        "astId": 3690,
+        "contract": "contracts/IdentityRegistry.sol:IdentityRegistry",
+        "label": "_agents",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_address,t_bool)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      }
+    }
+  }
+}

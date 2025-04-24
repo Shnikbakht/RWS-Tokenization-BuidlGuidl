@@ -1,0 +1,470 @@
+{
+  "address": "0x24E711865Cc72403349888BD71A80633E6848cE4",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "countryCode",
+          "type": "uint16"
+        }
+      ],
+      "name": "CountryUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "identity",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "countryCode",
+          "type": "uint16"
+        }
+      ],
+      "name": "IdentityStored",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "registry",
+          "type": "address"
+        }
+      ],
+      "name": "RegistryAuthorized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "registry",
+          "type": "address"
+        }
+      ],
+      "name": "RegistryUnauthorized",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "registry",
+          "type": "address"
+        }
+      ],
+      "name": "authorizeRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "getCountry",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "getIdentity",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "registry",
+          "type": "address"
+        }
+      ],
+      "name": "isRegistryAuthorized",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "removeIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "identity",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16",
+          "name": "countryCode",
+          "type": "uint16"
+        }
+      ],
+      "name": "storeIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "registry",
+          "type": "address"
+        }
+      ],
+      "name": "unauthorizeRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16",
+          "name": "countryCode",
+          "type": "uint16"
+        }
+      ],
+      "name": "updateCountry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x9db504314df65dad80ea875601b480ae7410c7d5875f2dd7d49db353d3630f1c",
+  "receipt": {
+    "to": null,
+    "from": "0x6eC7e3C0831e7F48A85DFf4Ef5FB1cEBA0368128",
+    "contractAddress": "0x24E711865Cc72403349888BD71A80633E6848cE4",
+    "transactionIndex": 9,
+    "gasUsed": "614231",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000801000000000000000000100000000000000000020040000000000000000800000000000000000000000000000000400000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000200020000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x9c4196e65763bccb60843f994be38d833a7181cc16e19f91cdd9ff0af7fadc08",
+    "transactionHash": "0x9db504314df65dad80ea875601b480ae7410c7d5875f2dd7d49db353d3630f1c",
+    "logs": [
+      {
+        "transactionIndex": 9,
+        "blockNumber": 26833207,
+        "transactionHash": "0x9db504314df65dad80ea875601b480ae7410c7d5875f2dd7d49db353d3630f1c",
+        "address": "0x24E711865Cc72403349888BD71A80633E6848cE4",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000006ec7e3c0831e7f48a85dff4ef5fb1ceba0368128"
+        ],
+        "data": "0x",
+        "logIndex": 10,
+        "blockHash": "0x9c4196e65763bccb60843f994be38d833a7181cc16e19f91cdd9ff0af7fadc08"
+      }
+    ],
+    "blockNumber": 26833207,
+    "cumulativeGasUsed": "10474270",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "db646b56958dd39c955b59fe23fdd2e0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint16\",\"name\":\"countryCode\",\"type\":\"uint16\"}],\"name\":\"CountryUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"IdentityRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"identity\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint16\",\"name\":\"countryCode\",\"type\":\"uint16\"}],\"name\":\"IdentityStored\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"registry\",\"type\":\"address\"}],\"name\":\"RegistryAuthorized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"registry\",\"type\":\"address\"}],\"name\":\"RegistryUnauthorized\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"registry\",\"type\":\"address\"}],\"name\":\"authorizeRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"getCountry\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"getIdentity\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"registry\",\"type\":\"address\"}],\"name\":\"isRegistryAuthorized\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"}],\"name\":\"removeIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"identity\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"countryCode\",\"type\":\"uint16\"}],\"name\":\"storeIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"registry\",\"type\":\"address\"}],\"name\":\"unauthorizeRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"countryCode\",\"type\":\"uint16\"}],\"name\":\"updateCountry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Storage contract for identity registry data, separating storage from business logic\",\"kind\":\"dev\",\"methods\":{\"authorizeRegistry(address)\":{\"details\":\"Authorizes a registry to interact with this storage\",\"params\":{\"registry\":\"Address of the registry to authorize\"}},\"getCountry(address)\":{\"details\":\"Gets the country code of an investor\",\"params\":{\"investorAddress\":\"Address of the investor\"},\"returns\":{\"_0\":\"Country code\"}},\"getIdentity(address)\":{\"details\":\"Gets the identity of an investor\",\"params\":{\"investorAddress\":\"Address of the investor\"},\"returns\":{\"_0\":\"Address of the identity contract\"}},\"isRegistryAuthorized(address)\":{\"details\":\"Checks if a registry is authorized\",\"params\":{\"registry\":\"Address of the registry\"},\"returns\":{\"_0\":\"True if the registry is authorized\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"removeIdentity(address)\":{\"details\":\"Removes an identity from storage\",\"params\":{\"investorAddress\":\"Address of the investor\"}},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"storeIdentity(address,address,uint16)\":{\"details\":\"Stores an identity for an investor\",\"params\":{\"countryCode\":\"Country code of the investor\",\"identity\":\"Address of the identity contract\",\"investorAddress\":\"Address of the investor\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"unauthorizeRegistry(address)\":{\"details\":\"Removes authorization from a registry\",\"params\":{\"registry\":\"Address of the registry to unauthorize\"}},\"updateCountry(address,uint16)\":{\"details\":\"Updates the country code of an investor\",\"params\":{\"countryCode\":\"New country code\",\"investorAddress\":\"Address of the investor\"}}},\"title\":\"IdentityRegistryStorage\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/IdentityRegistryStorage.sol\":\"IdentityRegistryStorage\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/IdentityRegistryStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.17;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\n/**\\n * @title IdentityRegistryStorage\\n * @dev Storage contract for identity registry data, separating storage from business logic\\n */\\ncontract IdentityRegistryStorage is Ownable {\\n    // Mapping of wallet address => identity contract\\n    mapping(address => address) private _identities;\\n    \\n    // Mapping of wallet address => country code (ISO 3166-1 numeric)\\n    mapping(address => uint16) private _countryCodes;\\n    \\n    // List of Identity Registries allowed to interact with this storage\\n    mapping(address => bool) private _authorizedRegistries;\\n    \\n    // Events\\n    event IdentityStored(address indexed investorAddress, address identity, uint16 countryCode);\\n    event IdentityRemoved(address indexed investorAddress);\\n    event CountryUpdated(address indexed investorAddress, uint16 countryCode);\\n    event RegistryAuthorized(address indexed registry);\\n    event RegistryUnauthorized(address indexed registry);\\n    \\n    /**\\n     * @dev Modifier to check if the sender is authorized\\n     */\\n    modifier onlyAuthorizedRegistry() {\\n        require(_authorizedRegistries[msg.sender], \\\"IdentityRegistryStorage: Unauthorized registry\\\");\\n        _;\\n    }\\n    \\n    /**\\n     * @dev Authorizes a registry to interact with this storage\\n     * @param registry Address of the registry to authorize\\n     */\\n    function authorizeRegistry(address registry) external onlyOwner {\\n        require(registry != address(0), \\\"IdentityRegistryStorage: Invalid address\\\");\\n        require(!_authorizedRegistries[registry], \\\"IdentityRegistryStorage: Already authorized\\\");\\n        \\n        _authorizedRegistries[registry] = true;\\n        \\n        emit RegistryAuthorized(registry);\\n    }\\n    \\n    /**\\n     * @dev Removes authorization from a registry\\n     * @param registry Address of the registry to unauthorize\\n     */\\n    function unauthorizeRegistry(address registry) external onlyOwner {\\n        require(_authorizedRegistries[registry], \\\"IdentityRegistryStorage: Not authorized\\\");\\n        \\n        _authorizedRegistries[registry] = false;\\n        \\n        emit RegistryUnauthorized(registry);\\n    }\\n    \\n    /**\\n     * @dev Stores an identity for an investor\\n     * @param investorAddress Address of the investor\\n     * @param identity Address of the identity contract\\n     * @param countryCode Country code of the investor\\n     */\\n    function storeIdentity(address investorAddress, address identity, uint16 countryCode) external onlyAuthorizedRegistry {\\n        require(investorAddress != address(0), \\\"IdentityRegistryStorage: Invalid address\\\");\\n        require(identity != address(0), \\\"IdentityRegistryStorage: Invalid identity\\\");\\n        \\n        _identities[investorAddress] = identity;\\n        _countryCodes[investorAddress] = countryCode;\\n        \\n        emit IdentityStored(investorAddress, identity, countryCode);\\n    }\\n    \\n    /**\\n     * @dev Removes an identity from storage\\n     * @param investorAddress Address of the investor\\n     */\\n    function removeIdentity(address investorAddress) external onlyAuthorizedRegistry {\\n        require(_identities[investorAddress] != address(0), \\\"IdentityRegistryStorage: Identity not found\\\");\\n        \\n        delete _identities[investorAddress];\\n        delete _countryCodes[investorAddress];\\n        \\n        emit IdentityRemoved(investorAddress);\\n    }\\n    \\n    /**\\n     * @dev Updates the country code of an investor\\n     * @param investorAddress Address of the investor\\n     * @param countryCode New country code\\n     */\\n    function updateCountry(address investorAddress, uint16 countryCode) external onlyAuthorizedRegistry {\\n        require(_identities[investorAddress] != address(0), \\\"IdentityRegistryStorage: Identity not found\\\");\\n        \\n        _countryCodes[investorAddress] = countryCode;\\n        \\n        emit CountryUpdated(investorAddress, countryCode);\\n    }\\n    \\n    /**\\n     * @dev Gets the identity of an investor\\n     * @param investorAddress Address of the investor\\n     * @return Address of the identity contract\\n     */\\n    function getIdentity(address investorAddress) external view returns (address) {\\n        return _identities[investorAddress];\\n    }\\n    \\n    /**\\n     * @dev Gets the country code of an investor\\n     * @param investorAddress Address of the investor\\n     * @return Country code\\n     */\\n    function getCountry(address investorAddress) external view returns (uint16) {\\n        return _countryCodes[investorAddress];\\n    }\\n    \\n    /**\\n     * @dev Checks if a registry is authorized\\n     * @param registry Address of the registry\\n     * @return True if the registry is authorized\\n     */\\n    function isRegistryAuthorized(address registry) external view returns (bool) {\\n        return _authorizedRegistries[registry];\\n    }\\n}\",\"keccak256\":\"0x88ea6a80992321d060d9315e459ad72586bed37c7ffbdee5166ca842a3adb6ca\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061001a3361001f565b61006f565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6109af8061007e6000396000f3fe608060405234801561001057600080fd5b50600436106100a95760003560e01c8063b0aa53dc11610071578063b0aa53dc14610161578063c1f2f1aa14610174578063d48fca2314610187578063d821f92d1461019a578063f2fde38b146101da578063f9362946146101ed57600080fd5b80632fea7b81146100ae5780633b239a7f146100f75780636e941d5e1461010c578063715018a6146101485780638da5cb5b14610150575b600080fd5b6100da6100bc3660046107ee565b6001600160a01b039081166000908152600160205260409020541690565b6040516001600160a01b0390911681526020015b60405180910390f35b61010a610105366004610822565b610200565b005b61013861011a3660046107ee565b6001600160a01b031660009081526003602052604090205460ff1690565b60405190151581526020016100ee565b61010a6102d1565b6000546001600160a01b03166100da565b61010a61016f3660046107ee565b6102e5565b61010a6101823660046107ee565b6103dc565b61010a610195366004610855565b6104a4565b6101c76101a83660046107ee565b6001600160a01b031660009081526002602052604090205461ffff1690565b60405161ffff90911681526020016100ee565b61010a6101e83660046107ee565b6105e6565b61010a6101fb3660046107ee565b61065f565b3360009081526003602052604090205460ff166102385760405162461bcd60e51b815260040161022f90610898565b60405180910390fd5b6001600160a01b038281166000908152600160205260409020541661026f5760405162461bcd60e51b815260040161022f906108e6565b6001600160a01b038216600081815260026020908152604091829020805461ffff191661ffff861690811790915591519182527f04ed3b726495c2dca1ff1215d9ca54e1a4030abb5e82b0f6ce55702416cee853910160405180910390a25050565b6102d9610728565b6102e36000610782565b565b6102ed610728565b6001600160a01b0381166103135760405162461bcd60e51b815260040161022f90610931565b6001600160a01b03811660009081526003602052604090205460ff16156103905760405162461bcd60e51b815260206004820152602b60248201527f4964656e74697479526567697374727953746f726167653a20416c726561647960448201526a08185d5d1a1bdc9a5e995960aa1b606482015260840161022f565b6001600160a01b038116600081815260036020526040808220805460ff19166001179055517fb9908420f7f761c66f2f2de6483341b084e1df4238247f4b7eb2f21e28f761ba9190a250565b3360009081526003602052604090205460ff1661040b5760405162461bcd60e51b815260040161022f90610898565b6001600160a01b03818116600090815260016020526040902054166104425760405162461bcd60e51b815260040161022f906108e6565b6001600160a01b038116600081815260016020908152604080832080546001600160a01b03191690556002909152808220805461ffff19169055517f374ace31388bb8ee152e1f7ad5e216944c28a32dfedb6c9353ba26bf0cdbb15a9190a250565b3360009081526003602052604090205460ff166104d35760405162461bcd60e51b815260040161022f90610898565b6001600160a01b0383166104f95760405162461bcd60e51b815260040161022f90610931565b6001600160a01b0382166105615760405162461bcd60e51b815260206004820152602960248201527f4964656e74697479526567697374727953746f726167653a20496e76616c6964604482015268206964656e7469747960b81b606482015260840161022f565b6001600160a01b03838116600081815260016020908152604080832080546001600160a01b03191695881695861790556002825291829020805461ffff191661ffff871690811790915582519485529084015290917f94c65988385de7bf0de13ba4244a1f16cf35abb55d3bd597313cdf9388e4c0bf910160405180910390a2505050565b6105ee610728565b6001600160a01b0381166106535760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b606482015260840161022f565b61065c81610782565b50565b610667610728565b6001600160a01b03811660009081526003602052604090205460ff166106df5760405162461bcd60e51b815260206004820152602760248201527f4964656e74697479526567697374727953746f726167653a204e6f74206175746044820152661a1bdc9a5e995960ca1b606482015260840161022f565b6001600160a01b038116600081815260036020526040808220805460ff19169055517fab62da557883d0592b69cd2087048df918fce4af0c6a97629fd34bf7e0973e949190a250565b6000546001600160a01b031633146102e35760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015260640161022f565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b80356001600160a01b03811681146107e957600080fd5b919050565b60006020828403121561080057600080fd5b610809826107d2565b9392505050565b803561ffff811681146107e957600080fd5b6000806040838503121561083557600080fd5b61083e836107d2565b915061084c60208401610810565b90509250929050565b60008060006060848603121561086a57600080fd5b610873846107d2565b9250610881602085016107d2565b915061088f60408501610810565b90509250925092565b6020808252602e908201527f4964656e74697479526567697374727953746f726167653a20556e617574686f60408201526d72697a656420726567697374727960901b606082015260800190565b6020808252602b908201527f4964656e74697479526567697374727953746f726167653a204964656e74697460408201526a1e481b9bdd08199bdd5b9960aa1b606082015260800190565b60208082526028908201527f4964656e74697479526567697374727953746f726167653a20496e76616c6964604082015267206164647265737360c01b60608201526080019056fea2646970667358221220934a09872e2be005e8f55bba8146182afb0072566d270f36b12834d11ade84d264736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a95760003560e01c8063b0aa53dc11610071578063b0aa53dc14610161578063c1f2f1aa14610174578063d48fca2314610187578063d821f92d1461019a578063f2fde38b146101da578063f9362946146101ed57600080fd5b80632fea7b81146100ae5780633b239a7f146100f75780636e941d5e1461010c578063715018a6146101485780638da5cb5b14610150575b600080fd5b6100da6100bc3660046107ee565b6001600160a01b039081166000908152600160205260409020541690565b6040516001600160a01b0390911681526020015b60405180910390f35b61010a610105366004610822565b610200565b005b61013861011a3660046107ee565b6001600160a01b031660009081526003602052604090205460ff1690565b60405190151581526020016100ee565b61010a6102d1565b6000546001600160a01b03166100da565b61010a61016f3660046107ee565b6102e5565b61010a6101823660046107ee565b6103dc565b61010a610195366004610855565b6104a4565b6101c76101a83660046107ee565b6001600160a01b031660009081526002602052604090205461ffff1690565b60405161ffff90911681526020016100ee565b61010a6101e83660046107ee565b6105e6565b61010a6101fb3660046107ee565b61065f565b3360009081526003602052604090205460ff166102385760405162461bcd60e51b815260040161022f90610898565b60405180910390fd5b6001600160a01b038281166000908152600160205260409020541661026f5760405162461bcd60e51b815260040161022f906108e6565b6001600160a01b038216600081815260026020908152604091829020805461ffff191661ffff861690811790915591519182527f04ed3b726495c2dca1ff1215d9ca54e1a4030abb5e82b0f6ce55702416cee853910160405180910390a25050565b6102d9610728565b6102e36000610782565b565b6102ed610728565b6001600160a01b0381166103135760405162461bcd60e51b815260040161022f90610931565b6001600160a01b03811660009081526003602052604090205460ff16156103905760405162461bcd60e51b815260206004820152602b60248201527f4964656e74697479526567697374727953746f726167653a20416c726561647960448201526a08185d5d1a1bdc9a5e995960aa1b606482015260840161022f565b6001600160a01b038116600081815260036020526040808220805460ff19166001179055517fb9908420f7f761c66f2f2de6483341b084e1df4238247f4b7eb2f21e28f761ba9190a250565b3360009081526003602052604090205460ff1661040b5760405162461bcd60e51b815260040161022f90610898565b6001600160a01b03818116600090815260016020526040902054166104425760405162461bcd60e51b815260040161022f906108e6565b6001600160a01b038116600081815260016020908152604080832080546001600160a01b03191690556002909152808220805461ffff19169055517f374ace31388bb8ee152e1f7ad5e216944c28a32dfedb6c9353ba26bf0cdbb15a9190a250565b3360009081526003602052604090205460ff166104d35760405162461bcd60e51b815260040161022f90610898565b6001600160a01b0383166104f95760405162461bcd60e51b815260040161022f90610931565b6001600160a01b0382166105615760405162461bcd60e51b815260206004820152602960248201527f4964656e74697479526567697374727953746f726167653a20496e76616c6964604482015268206964656e7469747960b81b606482015260840161022f565b6001600160a01b03838116600081815260016020908152604080832080546001600160a01b03191695881695861790556002825291829020805461ffff191661ffff871690811790915582519485529084015290917f94c65988385de7bf0de13ba4244a1f16cf35abb55d3bd597313cdf9388e4c0bf910160405180910390a2505050565b6105ee610728565b6001600160a01b0381166106535760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b606482015260840161022f565b61065c81610782565b50565b610667610728565b6001600160a01b03811660009081526003602052604090205460ff166106df5760405162461bcd60e51b815260206004820152602760248201527f4964656e74697479526567697374727953746f726167653a204e6f74206175746044820152661a1bdc9a5e995960ca1b606482015260840161022f565b6001600160a01b038116600081815260036020526040808220805460ff19169055517fab62da557883d0592b69cd2087048df918fce4af0c6a97629fd34bf7e0973e949190a250565b6000546001600160a01b031633146102e35760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015260640161022f565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b80356001600160a01b03811681146107e957600080fd5b919050565b60006020828403121561080057600080fd5b610809826107d2565b9392505050565b803561ffff811681146107e957600080fd5b6000806040838503121561083557600080fd5b61083e836107d2565b915061084c60208401610810565b90509250929050565b60008060006060848603121561086a57600080fd5b610873846107d2565b9250610881602085016107d2565b915061088f60408501610810565b90509250925092565b6020808252602e908201527f4964656e74697479526567697374727953746f726167653a20556e617574686f60408201526d72697a656420726567697374727960901b606082015260800190565b6020808252602b908201527f4964656e74697479526567697374727953746f726167653a204964656e74697460408201526a1e481b9bdd08199bdd5b9960aa1b606082015260800190565b60208082526028908201527f4964656e74697479526567697374727953746f726167653a20496e76616c6964604082015267206164647265737360c01b60608201526080019056fea2646970667358221220934a09872e2be005e8f55bba8146182afb0072566d270f36b12834d11ade84d264736f6c63430008110033",
+  "devdoc": {
+    "details": "Storage contract for identity registry data, separating storage from business logic",
+    "kind": "dev",
+    "methods": {
+      "authorizeRegistry(address)": {
+        "details": "Authorizes a registry to interact with this storage",
+        "params": {
+          "registry": "Address of the registry to authorize"
+        }
+      },
+      "getCountry(address)": {
+        "details": "Gets the country code of an investor",
+        "params": {
+          "investorAddress": "Address of the investor"
+        },
+        "returns": {
+          "_0": "Country code"
+        }
+      },
+      "getIdentity(address)": {
+        "details": "Gets the identity of an investor",
+        "params": {
+          "investorAddress": "Address of the investor"
+        },
+        "returns": {
+          "_0": "Address of the identity contract"
+        }
+      },
+      "isRegistryAuthorized(address)": {
+        "details": "Checks if a registry is authorized",
+        "params": {
+          "registry": "Address of the registry"
+        },
+        "returns": {
+          "_0": "True if the registry is authorized"
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "removeIdentity(address)": {
+        "details": "Removes an identity from storage",
+        "params": {
+          "investorAddress": "Address of the investor"
+        }
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "storeIdentity(address,address,uint16)": {
+        "details": "Stores an identity for an investor",
+        "params": {
+          "countryCode": "Country code of the investor",
+          "identity": "Address of the identity contract",
+          "investorAddress": "Address of the investor"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "unauthorizeRegistry(address)": {
+        "details": "Removes authorization from a registry",
+        "params": {
+          "registry": "Address of the registry to unauthorize"
+        }
+      },
+      "updateCountry(address,uint16)": {
+        "details": "Updates the country code of an investor",
+        "params": {
+          "countryCode": "New country code",
+          "investorAddress": "Address of the investor"
+        }
+      }
+    },
+    "title": "IdentityRegistryStorage",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 7,
+        "contract": "contracts/IdentityRegistryStorage.sol:IdentityRegistryStorage",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 4337,
+        "contract": "contracts/IdentityRegistryStorage.sol:IdentityRegistryStorage",
+        "label": "_identities",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_address)"
+      },
+      {
+        "astId": 4341,
+        "contract": "contracts/IdentityRegistryStorage.sol:IdentityRegistryStorage",
+        "label": "_countryCodes",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_uint16)"
+      },
+      {
+        "astId": 4345,
+        "contract": "contracts/IdentityRegistryStorage.sol:IdentityRegistryStorage",
+        "label": "_authorizedRegistries",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_bool)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_address)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => address)",
+        "numberOfBytes": "32",
+        "value": "t_address"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_uint16)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint16)",
+        "numberOfBytes": "32",
+        "value": "t_uint16"
+      },
+      "t_uint16": {
+        "encoding": "inplace",
+        "label": "uint16",
+        "numberOfBytes": "2"
+      }
+    }
+  }
+}

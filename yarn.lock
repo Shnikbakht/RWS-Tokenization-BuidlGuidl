@@ -1230,12 +1230,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/react@npm:~2.1.5":
-  version: 2.1.5
-  resolution: "@heroicons/react@npm:2.1.5"
+"@heroicons/react@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@heroicons/react@npm:2.2.0"
   peerDependencies:
-    react: ">= 16"
-  checksum: 1c793f96443580416eccdb60d72c19f640ce068a95f8568bfe8176c6e8ef1318f3d4d4caa8656b571002fe3a7f2d989d6812429fd6bca4bdff641e4b8998c0cd
+    react: ">= 16 || ^19.0.0-rc"
+  checksum: ff4dbfa98dacc41f86db82be9102d0c2cd0b8652b428f0b49ffd2580bee8f36fca43937a3d3d5e8f209c7303f5317a32163c018dfa13a3730d79dec43addac93
   languageName: node
   linkType: hard
 
@@ -2591,7 +2591,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@se-2/nextjs@workspace:packages/nextjs"
   dependencies:
-    "@heroicons/react": ~2.1.5
+    "@heroicons/react": ^2.2.0
     "@rainbow-me/rainbowkit": 2.1.6
     "@tanstack/react-query": ~5.59.15
     "@trivago/prettier-plugin-sort-imports": ~4.3.0
@@ -2609,6 +2609,8 @@ __metadata:
     eslint-config-next: ~14.2.15
     eslint-config-prettier: ~8.10.0
     eslint-plugin-prettier: ~5.2.1
+    framer-motion: ^12.9.1
+    lucide-react: ^0.503.0
     next: ~14.2.11
     next-nprogress-bar: ~2.3.13
     next-themes: ~0.3.0
@@ -2619,6 +2621,7 @@ __metadata:
     react-copy-to-clipboard: ~5.1.0
     react-dom: ~18.3.1
     react-hot-toast: ~2.4.0
+    react-icons: ^5.5.0
     tailwindcss: ~3.4.11
     type-fest: ~4.26.1
     typescript: <5.6.0
@@ -9113,6 +9116,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion@npm:^12.9.1":
+  version: 12.9.1
+  resolution: "framer-motion@npm:12.9.1"
+  dependencies:
+    motion-dom: ^12.9.1
+    motion-utils: ^12.8.3
+    tslib: ^2.4.0
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: fc451c6d616f854f11c02ddbe40577277a1b08a969765a1defea86ea21bd0059974d925200a06834a5c2032d8d92d9344f0d74e2ec13b30d2189b14171e2ee8b
+  languageName: node
+  linkType: hard
+
 "fs-extra@npm:11.1.0":
   version: 11.1.0
   resolution: "fs-extra@npm:11.1.0"
@@ -11124,6 +11149,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.503.0":
+  version: 0.503.0
+  resolution: "lucide-react@npm:0.503.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: ff55ef2c62d4002fec95e5fbe0b83ff830300639473bd228165061c64c107f0867c9815e479c1e71751d7b2dd2aa9aff4830b9da9e2c5a6361e1331f4de2c9c6
+  languageName: node
+  linkType: hard
+
 "make-dir@npm:^3.1.0":
   version: 3.1.0
   resolution: "make-dir@npm:3.1.0"
@@ -11542,6 +11576,22 @@ __metadata:
   version: 1.1.0
   resolution: "modern-ahocorasick@npm:1.1.0"
   checksum: 78b99840c9af086c1e36a594ee85bebd8c19d48e2ef31a67d1bad0e673ac12fc931e5961abb5b16daaf820af4923e700f76b1793b7413e18782230162866a0af
+  languageName: node
+  linkType: hard
+
+"motion-dom@npm:^12.9.1":
+  version: 12.9.1
+  resolution: "motion-dom@npm:12.9.1"
+  dependencies:
+    motion-utils: ^12.8.3
+  checksum: 080a17af7195a04ec52701aab2a8b4b0ca475b7425f4c1ee091536cf699d6e7173cbfe3b1ddc8fb8738d284e3b402b2205fd8f2b7a385c255780c56c359979dd
+  languageName: node
+  linkType: hard
+
+"motion-utils@npm:^12.8.3":
+  version: 12.8.3
+  resolution: "motion-utils@npm:12.8.3"
+  checksum: 7eec8df83bcbeac3b0dcbb33af41c0dc6b31e0f96a2fdba5685c087bac5257ce674212d65263d325c7e7b4ddcea3706b1225c51e97c97cfc4ef8d42190d0223d
   languageName: node
   linkType: hard
 
@@ -13045,6 +13095,15 @@ __metadata:
     react: ">=16"
     react-dom: ">=16"
   checksum: 3e337816db574782454bf09c63a8aca546bf9c5be3f83d0494d24bdcfd97ca2db64d4c151c4ab0184d2342d7a7226403e6812e70caf03c8b55a07787bb4ad0f2
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^5.5.0":
+  version: 5.5.0
+  resolution: "react-icons@npm:5.5.0"
+  peerDependencies:
+    react: "*"
+  checksum: cbd74f4b7982e6e18d59798a6b578268c8eb0909d78d87bcf9b25f99b3e544fd189a76551cb5e770d17f154a60b668551aee108aaf8471309b23f7af3b2c5b07
   languageName: node
   linkType: hard
 

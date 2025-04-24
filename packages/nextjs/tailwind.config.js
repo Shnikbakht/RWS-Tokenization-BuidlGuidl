@@ -14,7 +14,7 @@ module.exports = {
           100: "#b7b7d9",
           200: "#8f8fc4",
           300: "#6868ac",
-          400: "#44448e",
+          400: "#4f46e5",
           500: "#272757",
           600: "#0e0e27",
           700: "#0a0a1f",
@@ -57,7 +57,7 @@ module.exports = {
           "accent": "#9c27b0",
           "neutral": "#272757",
           "base-100": "#ffffff",
-          "base-200": "#f8f9fa",
+          "base-200": "#e5e7eb",
           "base-300": "#e0e0ef",
         },
         dark: {
